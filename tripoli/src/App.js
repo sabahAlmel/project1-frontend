@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Card from "./components/card";
 function App() {
   return (
-    <h1>hello team 6</h1>
-  );
+    <div>
+      <Card />
+    </div>
+    );
 }
 
 export default App;
