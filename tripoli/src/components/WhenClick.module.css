@@ -1,0 +1,74 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  animation: opa 0.2s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes opa {
+  0% {
+    background-color: rgba(0, 0, 0, 0%);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 25%);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 50%);
+  }
+}
+.layer {
+  width: 450px;
+  height: 450px;
+  position: relative;
+}
+.bubble {
+  background-color: rgb(209, 224, 240, 50%);
+  width: 230px;
+  height: 230px;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.layer img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: 1;
+}
+@media (max-width: 480px) {
+  .layer {
+    width: 230px;
+    height: 250px;
+  }
+  .layer img {
+    width: 170px;
+    height: 170px;
+  }
+  .bubble {
+    width: 150px;
+    height: 150px;
+    font-size: 13px;
+  }
+}
+.bubble h3 {
+  margin: 0;
+}
+.bubble a {
+  text-decoration: none;
+  padding: 5px;
+  color: white;
+  background-color: #496c97;
+}
