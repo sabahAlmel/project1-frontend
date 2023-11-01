@@ -1,25 +1,32 @@
 .card{
-    width: fit-content;
+    width:25.03rem;
     display: flex;
     flex-direction: column;
-    margin: 1rem 2rem;
+    margin: 1rem 3rem;
     border-radius: 5px;
     box-shadow:2px 3px 10px grey ;
+    /* flex :3; */
+
 }
+
 .title{
-font-family: Outfit;
-font-size: 30px;
+    font-size: 30px;
+    margin: 10px 0;
+    
+
 }
+
 .location, .time{
-    font-family: Outfit;
     font-size: 20px;
-    margin-left: 10px;
+    margin: 10px 0px;
+    padding: 7px;
+
 }
 
 .price{
-    font-family: Outfit;
     font-size: 20px;
 }
+
 .information{
     padding: 0rem 3rem 1rem 1.5rem ;
     display: flex;
@@ -27,18 +34,30 @@ font-size: 30px;
 }
 
 .hotelImg{
-    width: 25rem;
-    
-    height: 22rem;
+    width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    transition: all 1s cubic-bezier(0, 0 ,0.2, 1);
+}
+
+.overflow{
+    overflow: hidden;    
+}
+
+.hotelImg:hover{
+    filter: grayscale(0);
+    transform: scale3d(1.1, 1.1, 1.1);
+    cursor: pointer;
 }
 
 .priceButtun{
+    /* background:blueviolet; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 23rem;
 }
+
 .buttonView{
     background: #314865;
     width: 105px;
@@ -47,13 +66,16 @@ font-size: 30px;
     color: #FFF;
     font-size: 20px;
     border: none;
-    
+    cursor: pointer;  
+    margin-right: 10px;  
 }
+
 .buttonView:hover{
     background: white;
     color:#314865;
     border: 1px solid #314865 ;
 }
+
 .LocationIconStyle, .CarIconStayle{
     display: flex;
     flex-direction: row;

@@ -1,11 +1,21 @@
 import luxuryHotel from '../images/essentia-luxury-hotel.jpg'
+
 import LocationIcon from './LocationIcon'
+
 import style from './card.module.css'
+
 import CarIcon from './CarIcon'
-const card = () => {
+
+const Card = () => {
     return (
+    <div>
         <div className={style.card}>
+            <div className={style.overflow}>
+            <a href='https://www.google.com' target='_blank' className={style.goToHotel}>
+
             <img src={luxuryHotel} alt="hotel_image" className={style.hotelImg}/>
+            </a>
+            </div>
             <div className={style.information}>
                 <p className={style.title}>Hotel super winer 96</p>
                 <div className={style.LocationIconStyle}>
@@ -22,6 +32,10 @@ const card = () => {
                 </div>
             </div>
         </div>
+        </div>
+        
+
+
     )
 }
-export default card
+export default Card

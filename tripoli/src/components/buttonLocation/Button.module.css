@@ -1,0 +1,31 @@
+.buttonsPage{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+}
+
+.buttons, .button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons{
+    justify-content: space-evenly;
+}
+
+.button{
+    align-items: center;
+    border: 1px solid rgb(201, 201, 201);
+    width:23em;
+    justify-content: space-around;
+    height: 5rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.button:hover{
+    background: #cbcbcb;
+    box-shadow:1px 1px 10px #314865;
+    border-radius: 3px;
+}

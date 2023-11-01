@@ -1,0 +1,28 @@
+.line{
+    width: 30%;
+    height: 0;
+    border: 1px solid #314865;
+    align-items: center;
+}
+.boxCol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.vectParag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin-top: 3rem;
+
+}

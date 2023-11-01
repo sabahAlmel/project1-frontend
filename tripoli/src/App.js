@@ -1,8 +1,13 @@
-import Card from "./components/Card";
+// import Card from "./components/Card";
+import Button from "./components/buttonLocation/Button";
+// import About from "./components/About";
+// import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
   return (
     <div>
-      <Card />
+      {/* <ContainerLocation />
+      <Card /> */}
+      <Button />
     </div>
     );
 }
