@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Map from "./components/Map";
+import Map from "./components/Map/Map";
 
 import Citadel from "./images/alaaTripoli.jpg";
 import Mansouri from "./images/mansouri.jpg";
