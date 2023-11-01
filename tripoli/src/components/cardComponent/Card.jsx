@@ -1,10 +1,10 @@
 import luxuryHotel from '../images/essentia-luxury-hotel.jpg'
 
-import LocationIcon from './LocationIcon'
+import LocationIcon from '../vector/LocationIcon'
 
 import style from './card.module.css'
 
-import CarIcon from './CarIcon'
+import CarIcon from '../vector/CarIcon'
 
 const Card = () => {
     return (
