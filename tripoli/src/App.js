@@ -6,6 +6,8 @@ import "./App.css";
 // import homePageImage from "./components/heroImage/tripoli.jpg";
 import Locations from "./pages/locations/Locations";
 import React from "react";
+import TourCard from "./components/TourCard/TourCard";
+
 import { Route, Routes } from "react-router-dom";
 // import Map from "./components/Map/Map";
 
@@ -15,6 +17,10 @@ import Khan from "./images/khan.webp";
 import Taynal from "./images/taynal.jpg";
 import Mina from "./images/mina.jpg";
 import Maarad from "./images/m3rad-900x473.jpg";
+import Kazderni from "./images/Kazderni-.svg";
+import mira from "./images/mira.svg";
+import tour from "./images/tour 1.svg";
+import trip from "./images/tripadvisor.svg";
 
 function App() {
   let api = [
@@ -55,7 +61,36 @@ function App() {
       heroImage: Khan,
     },
   ];
-
+  let tourApi = [
+    {
+      id: 1,
+      image: Kazderni,
+      title: "kazderni",
+      description: "big big kazderni description",
+      link: "https://www.kazderni.com",
+    },
+    {
+      id: 2,
+      image: mira,
+      title: "mira",
+      description: "big big mira description",
+      link: "https://www.mira.com",
+    },
+    {
+      id: 3,
+      image: tour,
+      title: "Lebanon Tours and Travel",
+      description: "big big Tour description",
+      link: "https://www.hello.com",
+    },
+    {
+      id: 4,
+      image: trip,
+      title: "Tripadvisor",
+      description: "big big tripAdvisor description",
+      link: "https://www.tripadvisor.com",
+    },
+  ];
   return (
     <>
       <Routes>
@@ -72,6 +107,7 @@ function App() {
             ></Locations>
           }
         ></Route>
+        <Route path="/tour" element={<TourCard api={tourApi} />} />
       </Routes>
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
