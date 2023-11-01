@@ -10,6 +10,7 @@ import TourCard from "./components/TourCard/TourCard";
 
 import { Route, Routes } from "react-router-dom";
 // import Map from "./components/Map/Map";
+import Home from "./pages/Home/Home";
 
 import Citadel from "./images/alaaTripoli.jpg";
 import Mansouri from "./images/mansouri.jpg";
@@ -111,6 +112,7 @@ function App() {
             ></Locations>
           }
         ></Route>
+        <Route path="/" element={<Home api={api} tourApi={tourApi} />} />
         <Route path="/tour" element={<TourCard api={tourApi} />} />
       </Routes>
       {/* <Header></Header> */}
