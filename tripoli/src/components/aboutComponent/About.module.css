@@ -1,0 +1,50 @@
+.RowDisplay {
+    display: flex;
+    flex-direction: row;
+    /* background: red; */
+    /* color: blue; */
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+    /* width: fit-content; */
+  }
+
+  .RowReverseDispllay {
+    display: flex;
+    flex-direction: row-reverse;
+    /* background: red; */
+    /* color: blue; */
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+    /* width: fit-content; */
+  }
+
+.aboutImg {
+  width: 30rem;
+}
+
+.paragAbout, .title {
+  color: #314865;
+}
+
+.title{
+  font-family: Outfit;
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.paragAbout {
+  width: 45rem;
+  height: 15rem;
+  font-size: 30px;
+  font-family: Montagu Slab;
+  letter-spacing: 0.8px;
+  font-weight: 300;
+
+}
+.line {
+  border: 1px solid #D1D1D1;
+  margin-top: 5rem;
+  width: 105rem;
+}

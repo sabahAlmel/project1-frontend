@@ -16,6 +16,10 @@ import Taynal from "./images/taynal.jpg";
 import Mina from "./images/mina.jpg";
 import Maarad from "./images/m3rad-900x473.jpg";
 
+// import Card from "./components/Card";
+import Button from "./components/buttonLocation/Button";
+// import About from "./components/About";
+// import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
   let api = [
     {
