@@ -13,27 +13,37 @@ import Maarad from "./images/m3rad-900x473.jpg";
 function App() {
   let api = [
     {
+      id: 1,
       title: "Tripoli citadel",
       smallDescription: "tall building build in 2023",
       heroImage: Citadel,
     },
     {
+      id: 2,
       title: "Mansouri mosque",
       smallDescription: "an old mosque",
       heroImage: Mansouri,
     },
     {
+      id: 3,
       title: "Taynal mosque",
       smallDescription: "the bese mosque",
       heroImage: Taynal,
     },
-    { title: "Mina port", smallDescription: "big port", heroImage: Mina },
     {
+      id: 4,
+      title: "Mina port",
+      smallDescription: "big port",
+      heroImage: Mina,
+    },
+    {
+      id: 5,
       title: "Maarad",
       smallDescription: "huge building build in 2020",
       heroImage: Maarad,
     },
     {
+      id: 6,
       title: "Khan saboun",
       smallDescription: "most big saboun factory",
       heroImage: Khan,

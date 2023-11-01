@@ -22,27 +22,27 @@
 .map .first:hover {
   transform: scale(1.5);
 }
-.map .khan {
+.map .imagesOnMap1 {
   top: 30%;
   left: 50%;
 }
-.map .tripoli {
+.map .imagesOnMap2 {
   top: 40%;
   right: 20%;
 }
-.map .taynal {
+.map .imagesOnMap3 {
   top: 70%;
   left: 60%;
 }
-.map .mansouri {
-  top: 10%;
-  right: 10%;
+.map .imagesOnMap4 {
+  left: 15%;
+  top: 25%;
 }
-.map .maarad {
+.map .imagesOnMap5 {
   top: 55%;
   left: 33%;
 }
-.map .mina {
-  left: 15%;
-  top: 25%;
+.map .imagesOnMap6 {
+  top: 10%;
+  right: 10%;
 }

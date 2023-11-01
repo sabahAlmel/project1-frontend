@@ -37,9 +37,9 @@ const Map = ({ api }) => {
             <img
               key={element.title}
               src={element.heroImage}
-              className={`${
-                styles[element.title.split(" ")[0].toLowerCase()]
-              } ${styles.first} }}`}
+              className={`${styles[`imagesOnMap${element.id}`]} ${
+                styles.first
+              } }}`}
               alt="image"
               onClick={() => {
                 setSource(element.heroImage);
