@@ -8,10 +8,10 @@ const About = (props) => {
     <>
       <div
         className={`${
-          direction == "top" ? style.RowDisplay : style.RowReverseDispllay
+          direction === "top" ? style.RowDisplay : style.RowReverseDispllay
         }`}
       >
-        <img src={aboutImg} className={style.aboutImg} />
+        <img src={aboutImg} className={style.aboutImage} alt="about" />
         <div>
           <h1 className={style.title}>ABOUT VISIT TRIPOLI</h1>
           <p className={style.paragAbout}>

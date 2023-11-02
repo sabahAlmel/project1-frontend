@@ -6,7 +6,7 @@ import "./App.css";
 // import homePageImage from "./components/heroImage/tripoli.jpg";
 import Locations from "./pages/locations/Locations";
 import React from "react";
-import TourCard from "./components/TourCard/TourCard";
+// import TourCard from "./components/TourCard/TourCard";
 
 import { Route, Routes } from "react-router-dom";
 // import Map from "./components/Map/Map";
