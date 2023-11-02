@@ -2,12 +2,11 @@
 import Card from '../cardComponent/Card'
 import styles from './HotelContainer.module.css'
 
-export default function HotelContainer() {
+export default function HotelContainer(props) {
+  const element = props.element;
   return (
     <div className={styles.card}>
-        <Card />
-        <Card />
-        <Card />
+      <Card data={element}/>
     </div>
 )
 }

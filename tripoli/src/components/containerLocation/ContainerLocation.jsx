@@ -5,7 +5,8 @@ import HotelContainer from '../HotelCard/HotelContainer'
 // import About from '../aboutComponent/About.jsx'
 
 
-export default function ContainerLocation() {
+export default function ContainerLocation(props) {
+  const element = props.element
   return (
         <div>
             <div className={style.boxCol}>
@@ -17,7 +18,7 @@ export default function ContainerLocation() {
                 <div className={style.line}></div>
             </div>
             <div className={style.card}>
-              <HotelContainer/>
+              <HotelContainer element={element}/>
             </div>            
         </div>
   )

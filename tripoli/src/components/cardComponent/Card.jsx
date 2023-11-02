@@ -6,7 +6,8 @@ import style from "./card.module.css";
 
 import CarIcon from "../vector/CarIcon";
 
-const Card = () => {
+const Card = (props) => {
+  const data = props.data;
   return (
     <div>
       <div className={style.card}>
@@ -17,24 +18,24 @@ const Card = () => {
             className={style.goToHotel}
           >
             <img
-              src={luxuryHotel}
+              src={data.heroImage}
               alt="hotel_image"
               className={style.hotelImg}
             />
           </a>
         </div>
         <div className={style.information}>
-          <p className={style.title}>Hotel super winer 96</p>
+          <p className={style.title}>{data.title}</p>
           <div className={style.LocationIconStyle}>
             <LocationIcon />
-            <p className={style.location}>Tripoli, Al-Mina</p>
+            <p className={style.location}>{data.address}</p>
           </div>
           <div className={style.CarIconStayle}>
             <CarIcon />
-            <p className={style.time}>10 min from city center</p>
+            <p className={style.time}>{data.timeFromCenter}</p>
           </div>
           <div className={style.priceButtun}>
-            <p className={style.price}>$3/person</p>
+            <p className={style.price}>{data.entranceFee}</p>
             <a
               href="https://www.google.com"
               target="_blank"

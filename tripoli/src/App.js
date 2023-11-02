@@ -30,9 +30,106 @@ import tripoli from "./images/tripoli.jpg";
 // import Card from "./components/Card";
 import Button from "./components/buttonLocation/Button";
 import Hotel from "./pages/Hotel/Hotel";
+import AllLocations from "./pages/AllLocations/AllLocations";
+import homePageImage from './components/heroImage/tripoli.jpg'
 // import About from "./components/About";
 // import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
+
+  let locationApi = [{
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 2,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 3,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },  {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 3,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  
+]
+
+
   let api = [
     {
       id: 1,
@@ -113,7 +210,7 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path="/Locations"
+          path="/Location"
           element={
             <Locations
               title="Baalback"
@@ -128,6 +225,7 @@ function App() {
         <Route path="/" element={<Home api={api} tourApi={tourApi} />} />
         <Route path="tour" element={<Tour api={tourApi} />} />
         <Route path="hotel" element={<Hotel />} />
+        <Route path="locations" element ={<AllLocations api={locationApi}/>}/>
       </Routes>
       <Footer />
       {/* <Header></Header> */}
