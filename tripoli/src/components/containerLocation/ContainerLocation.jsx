@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React from "react";
 import Monuments from "../vector/Monuments";
 import Card from "../cardComponent/Card";
 import style from "./containerLocation.module.css";
 import About from "../aboutComponent/About";
+=======
+import React from 'react'
+import Monuments from '../vector/Monuments'
+import Card from '../cardComponent/Card'
+import style from './containerLocation.module.css'
+import About from '../aboutComponent/About.jsx'
+>>>>>>> anwar
 
 export default function ContainerLocation() {
   return (
