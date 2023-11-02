@@ -8,6 +8,102 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Locations from './pages/locations/Locations'
 
 function App() {
+
+  let locationApi = [{
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 2,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 0,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },  {
+    id: 2,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  {
+    id: 0,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5,2.5],
+    images:["aaa","bbb"],
+    heroImage: homePageImage,
+  },
+  
+]
+
+
+
   return (
     <>
     <BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import FooterCSS from './Footer.module.css'
-import Logo from '../SVGComponents/Logo'
+import Logo from '../SVGComponents/Logo' 
 
 import Whatsapp from '../SVGComponents/socialMedia/Whatsapp'
 import Instagram from '../SVGComponents/socialMedia/Instagram'
