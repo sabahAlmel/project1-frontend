@@ -29,6 +29,7 @@ import tripoli from "./images/tripoli.jpg";
 
 // import Card from "./components/Card";
 import Button from "./components/buttonLocation/Button";
+import Hotel from "./pages/Hotel/Hotel";
 // import About from "./components/About";
 // import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
@@ -126,6 +127,7 @@ function App() {
         ></Route>
         <Route path="/" element={<Home api={api} tourApi={tourApi} />} />
         <Route path="tour" element={<Tour api={tourApi} />} />
+        <Route path="hotel" element={<Hotel />} />
       </Routes>
       <Footer />
       {/* <Header></Header> */}
