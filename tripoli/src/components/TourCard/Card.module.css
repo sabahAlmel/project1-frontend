@@ -1,9 +1,10 @@
 .container {
   width: 40%;
   border-radius: 10px;
-  padding: 15px 20px;
+  padding: 20px;
   text-align: center;
   border: 1px solid #c3c3c3;
+  box-shadow: 2px 3px 5px grey;
 }
 
 .container img {
@@ -29,10 +30,10 @@
 }
 .container .link a {
   text-decoration: none;
-  border-radius: 6px;
-  padding: 5px;
+  padding: 10px;
   color: white;
-  background-color: #496c97;
+  background: #314865;
+  border-radius: 100px;
 }
 .container .link a:hover {
   background-color: white;
@@ -51,6 +52,15 @@
   .container h2,
   .container p,
   .container .link a {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  .container .link a {
+    padding: 7px;
+  }
+  .container p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100px;
   }
 }

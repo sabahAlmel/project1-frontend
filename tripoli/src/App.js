@@ -11,6 +11,9 @@ import TourCard from "./components/TourCard/TourCard";
 import { Route, Routes } from "react-router-dom";
 // import Map from "./components/Map/Map";
 import Home from "./pages/Home/Home";
+import Tour from "./pages/Tour/Tour";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 import Citadel from "./images/alaaTripoli.jpg";
 import Mansouri from "./images/mansouri.jpg";
@@ -22,6 +25,7 @@ import Kazderni from "./images/Kazderni-.svg";
 import mira from "./images/mira.svg";
 import tour from "./images/tour 1.svg";
 import trip from "./images/tripadvisor.svg";
+import tripoli from "./images/tripoli.jpg";
 
 // import Card from "./components/Card";
 import Button from "./components/buttonLocation/Button";
@@ -95,9 +99,17 @@ function App() {
       description: "big big tripAdvisor description",
       link: "https://www.tripadvisor.com",
     },
+    {
+      id: 5,
+      image: tripoli,
+      title: "Hero image",
+      description: "none",
+      link: "don't need",
+    },
   ];
   return (
     <>
+      <Header />
       <Routes>
         <Route
           path="/Locations"
@@ -113,8 +125,9 @@ function App() {
           }
         ></Route>
         <Route path="/" element={<Home api={api} tourApi={tourApi} />} />
-        <Route path="/tour" element={<TourCard api={tourApi} />} />
+        <Route path="tour" element={<Tour api={tourApi} />} />
       </Routes>
+      <Footer />
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
       {/* <Footer></Footer> */}

@@ -12,7 +12,8 @@ function TourCard({ api, home }) {
   return (
     <div className={styles.tour}>
       {newApi.map((element) => {
-        return <Card element={element} key={element.title} />;
+        if (element.title !== "Hero image")
+          return <Card element={element} key={element.title} />;
       })}
     </div>
   );
