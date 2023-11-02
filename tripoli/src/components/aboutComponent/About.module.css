@@ -1,23 +1,17 @@
 .RowDisplay {
     display: flex;
     flex-direction: row;
-    /* background: red; */
-    /* color: blue; */
     justify-content: space-evenly;
     align-items: center;
     margin-top: 5rem;
-    /* width: fit-content; */
   }
 
   .RowReverseDispllay {
     display: flex;
     flex-direction: row-reverse;
-    /* background: red; */
-    /* color: blue; */
     justify-content: space-evenly;
     align-items: center;
     margin-top: 5rem;
-    /* width: fit-content; */
   }
 
 .aboutImg {
@@ -29,7 +23,6 @@
 }
 
 .title{
-  font-family: Outfit;
   font-size: 64px;
   font-weight: 600;
 }

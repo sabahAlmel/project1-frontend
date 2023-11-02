@@ -1,4 +1,4 @@
-import luxuryHotel from '../images/essentia-luxury-hotel.jpg'
+import luxuryHotel from '../../images/essentia-luxury-hotel.jpg'
 
 import LocationIcon from '../vector/LocationIcon'
 
@@ -18,6 +18,7 @@ const Card = () => {
             </div>
             <div className={style.information}>
                 <p className={style.title}>Hotel super winer 96</p>
+            <div className={style.threeInfo}>
                 <div className={style.LocationIconStyle}>
                     <LocationIcon /><p className={style.location}>Tripoli, Al-Mina</p>
                 </div>
@@ -30,6 +31,7 @@ const Card = () => {
                     <button className={style.buttonView}>View</button>
                 </a>
                 </div>
+            </div>
             </div>
         </div>
         </div>

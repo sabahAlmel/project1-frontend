@@ -4,7 +4,7 @@ import Monuments from '../vector/Monuments'
 
 import { useState } from 'react'
 
-import ContainerLocation from '../containerLocation/ContainerLocation'
+// import ContainerLocation from '../containerLocation/ContainerLocation'
 
 const Button = () => {
     const [monument, setMonument] = useState('')
@@ -29,7 +29,7 @@ const Button = () => {
                 <span>Monuments</span>
             </div>
         </div>
-        <ContainerLocation />
+        {/* <ContainerLocation /> */}
     </div>
   )
 }

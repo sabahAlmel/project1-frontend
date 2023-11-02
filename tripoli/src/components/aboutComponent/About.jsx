@@ -1,4 +1,4 @@
-import aboutImg from "../images/essentia-luxury-hotel.jpg";
+import aboutImg from "../../images/essentia-luxury-hotel.jpg";
 import style from './About.module.css'
 
 

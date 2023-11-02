@@ -1,8 +1,8 @@
 import React from 'react'
 import Monuments from '../vector/Monuments'
-import Card from '../Card'
+import Card from '../cardComponent/Card'
 import style from './containerLocation.module.css'
-import About from '../About'
+import About from '../aboutComponent/About.jsx'
 
 export default function ContainerLocation() {
   return (
