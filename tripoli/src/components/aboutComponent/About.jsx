@@ -23,7 +23,7 @@ const About = (props) => {
           </p>
         </div>
       </div>
-      <hr className={style.line} />
+      <hr className={`${direction === "top" ? style.line : style.remove}`} />
     </>
   );
 };

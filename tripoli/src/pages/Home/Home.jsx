@@ -4,9 +4,9 @@ import HeroImage from "../../components/heroImage/HeroImage";
 import About from "../../components/aboutComponent/About";
 import Map from "../../components/Map/Map";
 import testImage from "../../components/heroImage/tripoli.jpg";
-import ContainerLocation from "../../components/containerLocation/ContainerLocation";
 import TourCard from "../../components/TourCard/TourCard";
 import { Link } from "react-router-dom";
+import HotelContainer from "../../components/HotelCard/HotelContainer";
 
 function Home({ api, tourApi }) {
   return (
@@ -17,7 +17,7 @@ function Home({ api, tourApi }) {
 
       <Map api={api} />
       <h3 className={styles.heading}>Hotel</h3>
-      <ContainerLocation />
+      <HotelContainer />
       <Link to="/hotel" className={styles.link}>
         View more &gt;&gt;
       </Link>

@@ -1,8 +1,8 @@
 import React from 'react'
 import Monuments from '../vector/Monuments'
-import Card from '../cardComponent/Card'
 import style from './containerLocation.module.css'
-import About from '../aboutComponent/About.jsx'
+import HotelContainer from '../HotelCard/HotelContainer'
+// import About from '../aboutComponent/About.jsx'
 
 
 export default function ContainerLocation() {
@@ -17,11 +17,7 @@ export default function ContainerLocation() {
                 <div className={style.line}></div>
             </div>
             <div className={style.card}>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <HotelContainer/>
             </div>            
         </div>
   )
