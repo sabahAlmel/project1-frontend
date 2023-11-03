@@ -1,83 +1,93 @@
-import React, { useState } from 'react'
-import Button from '../../components/buttonLocation/Button'
-import HeroImage from '../../components/heroImage/HeroImage'
-import heroTestImage from '../../components/heroImage/tripoli.jpg'
-import ContainerLocation from '../../components/containerLocation/ContainerLocation'
+import React, { useState } from "react";
+import Button from "../../components/buttonLocation/Button";
+import HeroImage from "../../components/heroImage/HeroImage";
+import heroTestImage from "../../components/heroImage/tripoli.jpg";
+import ContainerLocation from "../../components/containerLocation/ContainerLocation";
 
 export default function AllLocations(props) {
+  const [whichButtonClicked, setWhichButtonClicked] = useState("");
 
-    const [whichButtonClicked, setWhichButtonClicked] = useState("");
+  const api = props.api;
+  let idOne = [];
+  let idTwo = [];
+  let idThree = [];
 
-    const api = props.api;
-    let idOne = []
-    let idTwo = []
-    let idThree = []
+  let idOneAll = [];
+  let idTwoAll = [];
+  let idThreeAll = [];
 
-    let idOneAll = []
-    let idTwoAll = []
-    let idThreeAll = []
-    
-    const map = api.map((element)=>{
-        if(element.id ==1) {
-            idOne.push(element)
-            idOneAll.push(element)
-        } else if(element.id==2){
-            idTwo.push(element)
-            idTwoAll.push(element)
-        } else if(element.id==3){
-            idThree.push(element)
-            idThreeAll.push(element)
-
-        }
-
-    })
-
-    if(idOne.length >3){
-        idOne = idOne.slice(0,3);
+  const map = api.map((element) => {
+    if (element.id == 1) {
+      idOne.push(element);
+      idOneAll.push(element);
+    } else if (element.id == 2) {
+      idTwo.push(element);
+      idTwoAll.push(element);
+    } else if (element.id == 3) {
+      idThree.push(element);
+      idThreeAll.push(element);
     }
-    if(idTwo.length >3){
-        idTwo = idTwo.slice(0,3);
-    }
-    if(idThree.length >3){
-        idThree = idThree.slice(0,3);
-    }
+  });
 
-    // console.log(idOne,idThree,idTwo)
+  if (idOne.length > 3) {
+    idOne = idOne.slice(0, 3);
+  }
+  if (idTwo.length > 3) {
+    idTwo = idTwo.slice(0, 3);
+  }
+  if (idThree.length > 3) {
+    idThree = idThree.slice(0, 3);
+  }
 
-    // const map2 = idOne.map((element)=>{
-    //    return <ContainerLocation element = {element}></ContainerLocation>
-    // })
-    // const map3 = idTwo.map((element)=>{
-    //     return <ContainerLocation element = {element}></ContainerLocation>
-    //  })
-    //  const map4 = idThree.map((element)=>{
-    //     return <ContainerLocation element = {element}></ContainerLocation>
-    //  })
+  // console.log(idOne,idThree,idTwo)
+
+  // const map2 = idOne.map((element)=>{
+  //    return <ContainerLocation element = {element}></ContainerLocation>
+  // })
+  // const map3 = idTwo.map((element)=>{
+  //     return <ContainerLocation element = {element}></ContainerLocation>
+  //  })
+  //  const map4 = idThree.map((element)=>{
+  //     return <ContainerLocation element = {element}></ContainerLocation>
+  //  })
 
   return (
     <>
-    <HeroImage image={heroTestImage}></HeroImage>
-    <Button buttonPressed={setWhichButtonClicked}/>
-    {whichButtonClicked ? 
-    whichButtonClicked == 1 ? 
-    
-        <ContainerLocation elementArray={idOneAll}/>
-        :
-            whichButtonClicked ==2 ?    
-                <ContainerLocation elementArray={idTwoAll}/>
-            :
-            whichButtonClicked ==3 ?
-                <ContainerLocation elementArray={idThreeAll}/>
-            : null
-    
-    :  
-    <>
-    <ContainerLocation elementArray={idOne}/>
-    <ContainerLocation elementArray={idTwo}/>
-    <ContainerLocation elementArray={idThree}/>
-    
+      <HeroImage image={heroTestImage}></HeroImage>
+      <Button buttonPressed={setWhichButtonClicked} />
+      {whichButtonClicked ? (
+        whichButtonClicked == 1 ? (
+          <ContainerLocation
+            elementArray={idOneAll}
+            sentence="Discover Tripoli's Monuments"
+          />
+        ) : whichButtonClicked == 2 ? (
+          <ContainerLocation
+            elementArray={idTwoAll}
+            sentence="Discover Tripoli's Activities"
+          />
+        ) : whichButtonClicked == 3 ? (
+          <ContainerLocation
+            elementArray={idThreeAll}
+            sentence="Discover Tripoli's places of worship"
+          />
+        ) : null
+      ) : (
+        <>
+          <ContainerLocation
+            elementArray={idOne}
+            sentence="Discover Tripoli's Monuments"
+          />
+          <ContainerLocation
+            elementArray={idTwo}
+            sentence="Discover Tripoli's Activities"
+          />
+          <ContainerLocation
+            elementArray={idThree}
+            sentence="Discover Tripoli's places of worship"
+          />
+        </>
+      )}
     </>
-    }
-    </>
-  )
+  );
 }

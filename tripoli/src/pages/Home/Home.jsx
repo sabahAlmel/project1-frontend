@@ -8,7 +8,8 @@ import TourCard from "../../components/TourCard/TourCard";
 import { Link } from "react-router-dom";
 import HotelContainer from "../../components/HotelCard/HotelContainer";
 
-function Home({ api, tourApi }) {
+function Home({ api, tourApi, elementArray }) {
+  let newApi = elementArray.slice(0, 3);
   return (
     <>
       <HeroImage image={testImage} />
@@ -17,7 +18,7 @@ function Home({ api, tourApi }) {
 
       <Map api={api} />
       <h3 className={styles.heading}>Hotel</h3>
-      <HotelContainer />
+      <HotelContainer elementArray={newApi} />
       <Link to="/hotel" className={styles.link}>
         View more &gt;&gt;
       </Link>
