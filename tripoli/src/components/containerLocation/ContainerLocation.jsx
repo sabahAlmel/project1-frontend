@@ -2,7 +2,7 @@ import React from 'react'
 import Monuments from '../vector/Monuments'
 import Card from '../cardComponent/Card'
 import style from './containerLocation.module.css'
-import About from '../aboutComponent/About.jsx'
+// import About from '../aboutComponent/About.jsx'
 
 export default function ContainerLocation() {
   return (
@@ -10,8 +10,8 @@ export default function ContainerLocation() {
             <div className={style.boxCol}>
                 <div className={style.line}></div>
                 <div className={style.vectParag}>
-                  <Monuments />
-                  <p>Discover Tripoli's Monuments</p>
+                  <span className={style.monuments}><Monuments /></span>
+                  <p className={style.title}>Discover Tripoli's Monuments</p>
                 </div>
                 <div className={style.line}></div>
             </div>
@@ -19,11 +19,7 @@ export default function ContainerLocation() {
               <Card />
               <Card />
               <Card />
-              <Card />
-              <Card />
-            </div>
-            <About />
-            
+            </div>            
         </div>
   )
 }

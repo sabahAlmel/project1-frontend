@@ -90,67 +90,63 @@
     flex-direction: column;
     margin: 0;
 }
+@media (max-width: 1500px){
+    .card{
+        width: 24rem;
+    }
+    .buttonView{
+        margin-right: 25px;
 
-@media (max-width: 435px) {
-    
-.card{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 2rem;
-    border-radius: 5px;
-    box-shadow:2px 3px 10px grey ;
-    height: 35rem;
+    }
 }
-.title{
-font-family: Outfit;
-font-size: 25px;
-}
-.location{
-    font-family: Outfit;
-    font-size: 20px;
-}
-.time{
-    font-family: Outfit;
-    font-size: 16px;
-}
-.price{
-    font-family: Outfit;
-    font-size: 20px;
-}
-.information{
-    padding: 0rem 3rem 1rem 1.5rem ;
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 1000px){
+    .card{
+        width: 21rem;
+    }
+        .title{
+            font-size: 27px;
 
-.hotelImg{
-    width: 300px;
-    
-    height: 22rem;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
+        }
+        .location,.time,.price{
+            font-size: 18px;
+        }
+        .buttonView{
+            margin-right: 72px;
+        width: 95px;
+        height: 38px;
+        font-size: 18px;
+        }
 
-.priceButtun{
-    display: flex;
-    align-items: center;
-    /* flex-direction: column; */
-    justify-content: space-between;
-    /* margin-top: -1rem; */
+    }
+
+
+@media (max-width: 400px) {
+    .card {   
+        width: 19rem;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        border-radius: 5px;
+        box-shadow: 2px 3px 10px grey;
+        height: 28rem;
 }
-.buttonView{
-    background: #314865;
-    width: 105px;
-    height: 41px;
-    border-radius: 100px;
-    color: #FFF;
-    font-size: 20px;
-    border: none;
-    
-}
-.buttonView:hover{
-    width: 110px;
-    height: 40px;
-}
-}
+    .title{
+        font-size: 23px;
+        margin: 15px 0;
+    }
+    .location,.time,.price{
+        font-size: 17px;
+    }
+    .buttonView{
+        background: #314865;
+        width: 78px;
+        height: 35px;
+        border-radius: 100px;
+        color: #FFF;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+        margin-right: 105px;
+    }
+
+}    
