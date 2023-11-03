@@ -3,7 +3,7 @@ import "./App.css";
 // import Footer from "./components/footer/Footer";
 // import HeroImage from "./components/heroImage/HeroImage";
 
-// import homePageImage from "./components/heroImage/tripoli.jpg";
+import homePageImage from "./components/heroImage/tripoli.jpg";
 import Locations from "./pages/locations/Locations";
 import React from "react";
 // import TourCard from "./components/TourCard/TourCard";
@@ -26,6 +26,7 @@ import mira from "./images/mira.svg";
 import tour from "./images/tour 1.svg";
 import trip from "./images/tripadvisor.svg";
 import tripoli from "./images/tripoli.jpg";
+import AllLocations from "./pages/AllLocations/AllLocations";
 
 // import Card from "./components/Card";
 // import Button from "./components/buttonLocation/Button";
@@ -205,7 +206,7 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path="/Locations"
+          path="/Location"
           element={
             <Locations
               title="Baalback"
@@ -219,6 +220,7 @@ function App() {
         ></Route>
         <Route path="/" element={<Home api={api} tourApi={tourApi} />} />
         <Route path="tour" element={<Tour api={tourApi} />} />
+        <Route path="locations" element={<AllLocations api={locationApi}/>}/>
       </Routes>
       <Footer />
       {/* <Header></Header> */}
