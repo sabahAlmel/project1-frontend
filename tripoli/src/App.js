@@ -30,6 +30,8 @@ import AllLocations from "./pages/AllLocations/AllLocations";
 
 // import Card from "./components/Card";
 // import Button from "./components/buttonLocation/Button";
+// import Card from './compon ents/cardComponent/Card.jsx'
+import Button from "./components/buttonLocation/Button.jsx";
 // import About from "./components/About";
 // import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
