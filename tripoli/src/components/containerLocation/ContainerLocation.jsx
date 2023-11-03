@@ -6,7 +6,8 @@ import HotelContainer from '../HotelCard/HotelContainer'
 
 
 export default function ContainerLocation(props) {
-  const element = props.element
+  const element = props.elementArray
+  console.log("this is my element in container ",element)
   return (
         <div>
             <div className={style.boxCol}>
@@ -18,7 +19,7 @@ export default function ContainerLocation(props) {
                 <div className={style.line}></div>
             </div>
             <div className={style.card}>
-              <HotelContainer element={element}/>
+              <HotelContainer elementArray={element}/>
             </div>            
         </div>
   )

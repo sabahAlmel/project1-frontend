@@ -12,14 +12,22 @@ export default function AllLocations(props) {
     let idOne = []
     let idTwo = []
     let idThree = []
+
+    let idOneAll = []
+    let idTwoAll = []
+    let idThreeAll = []
     
     const map = api.map((element)=>{
         if(element.id ==1) {
             idOne.push(element)
+            idOneAll.push(element)
         } else if(element.id==2){
             idTwo.push(element)
+            idTwoAll.push(element)
         } else if(element.id==3){
             idThree.push(element)
+            idThreeAll.push(element)
+
         }
 
     })
@@ -30,19 +38,21 @@ export default function AllLocations(props) {
     if(idTwo.length >3){
         idTwo = idTwo.slice(0,3);
     }
-    if(idTwo.length >3){
+    if(idThree.length >3){
         idThree = idThree.slice(0,3);
     }
 
-    const map2 = idOne.map((element)=>{
-       return <ContainerLocation element = {element}></ContainerLocation>
-    })
-    const map3 = idTwo.map((element)=>{
-        return <ContainerLocation element = {element}></ContainerLocation>
-     })
-     const map4 = idThree.map((element)=>{
-        return <ContainerLocation element = {element}></ContainerLocation>
-     })
+    // console.log(idOne,idThree,idTwo)
+
+    // const map2 = idOne.map((element)=>{
+    //    return <ContainerLocation element = {element}></ContainerLocation>
+    // })
+    // const map3 = idTwo.map((element)=>{
+    //     return <ContainerLocation element = {element}></ContainerLocation>
+    //  })
+    //  const map4 = idThree.map((element)=>{
+    //     return <ContainerLocation element = {element}></ContainerLocation>
+    //  })
 
   return (
     <>
@@ -51,18 +61,21 @@ export default function AllLocations(props) {
     {whichButtonClicked ? 
     whichButtonClicked == 1 ? 
     
-        {map2}
+        <ContainerLocation elementArray={idOneAll}/>
         :
             whichButtonClicked ==2 ?    
-                {map3}
+                <ContainerLocation elementArray={idTwoAll}/>
             :
             whichButtonClicked ==3 ?
-                {map4}
+                <ContainerLocation elementArray={idThreeAll}/>
             : null
     
     :  
     <>
-    {map2} {map3} {map4}
+    <ContainerLocation elementArray={idOne}/>
+    <ContainerLocation elementArray={idTwo}/>
+    <ContainerLocation elementArray={idThree}/>
+    
     </>
     }
     </>
