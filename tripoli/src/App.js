@@ -32,6 +32,7 @@ import Add from "./components/Dashboard/Add";
 // import About from "./components/About";
 // import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
+  let [tourApi, setTourApi] = useState([]);
   let api = [
     {
       id: 1,
