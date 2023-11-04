@@ -1,4 +1,6 @@
 import "./App.css";
+import axios from "axios";
+
 // import Header from "./components/header/Header";
 // import Footer from "./components/footer/Footer";
 // import HeroImage from "./components/heroImage/HeroImage";
@@ -24,6 +26,9 @@ import trip from "./images/tripadvisor.svg";
 
 // import Card from "./components/Card";
 import Button from "./components/buttonLocation/Button";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Update from "./components/Dashboard/Update";
+import Add from "./components/Dashboard/Add";
 // import About from "./components/About";
 // import ContainerLocation from "./components/containerLocation/ContainerLocation";
 function App() {
@@ -65,36 +70,50 @@ function App() {
       heroImage: Khan,
     },
   ];
-  let tourApi = [
-    {
-      id: 1,
-      image: Kazderni,
-      title: "kazderni",
-      description: "big big kazderni description",
-      link: "https://www.kazderni.com",
-    },
-    {
-      id: 2,
-      image: mira,
-      title: "mira",
-      description: "big big mira description",
-      link: "https://www.mira.com",
-    },
-    {
-      id: 3,
-      image: tour,
-      title: "Lebanon Tours and Travel",
-      description: "big big Tour description",
-      link: "https://www.hello.com",
-    },
-    {
-      id: 4,
-      image: trip,
-      title: "Tripadvisor",
-      description: "big big tripAdvisor description",
-      link: "https://www.tripadvisor.com",
-    },
-  ];
+  // let tourApi = [
+  //   {
+  //     id: 1,
+  //     image: Kazderni,
+  //     title: "kazderni",
+  //     description: "big big kazderni description",
+  //     link: "https://www.kazderni.com",
+  //   },
+  //   {
+  //     id: 2,
+  //     image: mira,
+  //     title: "mira",
+  //     description: "big big mira description",
+  //     link: "https://www.mira.com",
+  //   },
+  //   {
+  //     id: 3,
+  //     image: tour,
+  //     title: "Lebanon Tours and Travel",
+  //     description: "big big Tour description",
+  //     link: "https://www.hello.com",
+  //   },
+  //   {
+  //     id: 4,
+  //     image: trip,
+  //     title: "Tripadvisor",
+  //     description: "big big tripAdvisor description",
+  //     link: "https://www.tripadvisor.com",
+  //   },
+  // ];
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:4000/tours");
+        setTourApi(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+  console.log(tourApi);
   return (
     <>
       <Routes>
@@ -112,6 +131,12 @@ function App() {
           }
         ></Route>
         <Route path="/tour" element={<TourCard api={tourApi} />} />
+        <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
+        <Route
+          path="/admin/tours/update/:id"
+          element={<Update api={tourApi} />}
+        />
+        <Route path="/admin/tours/add" element={<Add />} />
       </Routes>
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
