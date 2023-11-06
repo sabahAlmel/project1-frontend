@@ -14,15 +14,15 @@ function TourCard({ api, home }) {
       {newApi.map((element) => {
         if (element.title !== "Hero image")
           return <Card element={element} key={element.title} />;
-        // else {
-        //   return (
-        //     <img
-        //       src={`http://localhost:4000/${element.image}`}
-        //       alt="hero of tours"
-        //       className={styles.hero}
-        //     />
-        //   );
-        // }
+        else if (element.title == "Hero image" && home == "false") {
+          return (
+            <img
+              src={`http://localhost:4000/${element.image}`}
+              alt="hero of tours"
+              className={styles.hero}
+            />
+          );
+        }
       })}
     </div>
   );

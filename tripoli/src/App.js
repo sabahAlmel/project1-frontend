@@ -2,19 +2,16 @@ import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-// import Header from "./components/header/Header";
-// import Footer from "./components/footer/Footer";
-// import HeroImage from "./components/heroImage/HeroImage";
-
 import homePageImage from "./components/heroImage/tripoli.jpg";
 import Locations from "./pages/locations/Locations";
 import React from "react";
-// import TourCard from "./components/TourCard/TourCard";
+import NotFound from "./components/Not Found/NotFound";
 
 import { Route, Routes } from "react-router-dom";
 // import Map from "./components/Map/Map";
 import Home from "./pages/Home/Home";
 import Tour from "./pages/Tour/Tour";
+import Hotel from "./pages/Hotel/Hotel";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
@@ -33,6 +30,7 @@ import AllLocations from "./pages/AllLocations/AllLocations";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Add from "./components/Dashboard/Add";
 import Update from "./components/Dashboard/Update";
+import ContainerOfThePage from "./components/ContainerOfThePage/ContainerOfThePage";
 
 function App() {
   let [tourApi, setTourApi] = useState([]);
@@ -243,7 +241,6 @@ function App() {
     async function fetchData() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
-        console.log(response.data);
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -254,8 +251,23 @@ function App() {
   console.log(tourApi);
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
+        <Route path="/" element={<ContainerOfThePage />}>
+          <Route
+            index
+            path="/"
+            element={
+              <Home api={api} tourApi={tourApi} elementArray={locationApi} />
+            }
+          />
+          <Route path="tour" element={<Tour api={tourApi} />} />
+          <Route path="hotels" element={<Hotel home="false" />} />
+          <Route
+            path="locations"
+            element={<AllLocations api={locationApi} />}
+          />
+        </Route>
         <Route
           path="/Location"
           element={
@@ -269,25 +281,19 @@ function App() {
             ></Locations>
           }
         ></Route>
-        <Route
-          path="/"
-          element={
-            <Home api={api} tourApi={tourApi} elementArray={locationApi} />
-          }
-        />
-        <Route path="tour" element={<Tour api={tourApi} />} />
-        <Route path="locations" element={<AllLocations api={locationApi} />} />
+
         <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
         <Route
           path="/admin/tours/update/:id"
           element={<Update api={tourApi} />}
         />
         <Route path="/admin/tours/add" element={<Add />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
-      <Footer></Footer>
+      {/* <Footer /> */}
     </>
   );
 }
