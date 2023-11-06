@@ -270,23 +270,6 @@ function App() {
             path="locations"
             element={<AllLocations api={locationApi} />}
           />
-<<<<<<< HEAD
-       
-        <Route
-          path="/Location"
-          element={
-            <Locations
-              title="Baalback"
-              address="there on the fifth street"
-              time="60 minutes"
-              rating="5"
-              fee="$5"
-              iconColor="#123456"
-            ></Locations>
-          }
-        ></Route>
-         </Route>
-=======
           <Route
             path="/Location"
             element={
@@ -301,7 +284,6 @@ function App() {
             }
           />
         </Route>
->>>>>>> 4929903d9fe31f5787e90f80925162b9358dd890
 
         <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
         <Route
