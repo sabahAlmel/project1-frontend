@@ -5,7 +5,10 @@ function Card({ element }) {
   return (
     <div className={styles.container}>
       <a href={element.link} target="_blank">
-        <img src={element.image} alt="card" />
+        <img
+          src={`http://localhost:4000/${element.image}`}
+          alt="this is image"
+        />
       </a>
       <h2>{element.title}</h2>
       <p>{element.description}</p>
