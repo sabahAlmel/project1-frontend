@@ -284,10 +284,10 @@ function App() {
         />
         <Route path="/admin/tours/add" element={<Add />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 }
