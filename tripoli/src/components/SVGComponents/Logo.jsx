@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function Logo(props) {
+  let height = 69;
+  let width = 258;
+
   let colorOne = "#314865";
   let colorTwo = "black";
   let colorThree = "#496C97";
@@ -9,11 +12,16 @@ export default function Logo(props) {
     colorTwo = "white";
     colorThree = "white";
   }
+
+  if(props.size =="small"){
+    height = 55;
+    width = 206;
+  }
   return (
     <div>
       <svg
-        width="258"
-        height="69"
+        width={width}
+        height={height}
         viewBox="0 0 258 69"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

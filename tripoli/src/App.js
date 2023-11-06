@@ -269,10 +269,10 @@ function App() {
         <Route path="tour" element={<Tour api={tourApi} />} />
         <Route path="locations" element={<AllLocations api={locationApi} />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
       {/* <Header></Header> */}
       {/* <HeroImage image={homePageImage} alt="tripoli"></HeroImage> */}
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 }

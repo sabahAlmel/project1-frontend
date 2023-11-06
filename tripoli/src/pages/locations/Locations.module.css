@@ -49,3 +49,10 @@
 .article p{
     margin-bottom: 50px;
 }
+
+.mainSlider{
+    width: 90vw;
+    height: 600px;
+    margin: 0 auto;
+    /* padding: 0 64px; */
+}

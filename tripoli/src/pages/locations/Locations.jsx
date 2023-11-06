@@ -10,6 +10,9 @@ import Star from '../../components/SVGComponents/Star'
 import Money from '../../components/SVGComponents/Money'
 
 // import test from '../../components/heroImage/tripoli.png'
+import testImages from '../locations/testImages/testImages'
+// console.log(testImages)
+import ImageSlider from '../../components/slider/ImageSlider'
 
 export default function Locations(props) {
   let iconColor = props.iconColor || "#111";
@@ -71,14 +74,11 @@ export default function Locations(props) {
       Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
       </p>
     </article>
-    <div className='imgContainer'>
-      <img src={homePageImage} alt='test'></img>
-      <img src={homePageImage} alt='test'></img>
-      <img src={homePageImage} alt='test'></img>
-      <img src={homePageImage} alt='test'></img>
+    <div className={LocationCSS.mainSlider}>
+      <ImageSlider images={testImages}/>
     </div>
+
    </div>
-    <Footer></Footer>
     </>
   )
 }

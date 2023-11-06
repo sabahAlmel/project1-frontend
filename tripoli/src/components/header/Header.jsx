@@ -1,19 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../SVGComponents/Logo";
 import HeaderCSS from "./Header.module.css";
 import MapIcon from "../SVGComponents/MapIcon";
+import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [locationsTrigger, setLocationsTrigger] = useState(false);
-  const [mapHovered, setMapHovered] = useState(false);
 
-  const handleLocations = (e) => {
-    if (locationsTrigger) {
-      setLocationsTrigger(false);
-    } else {
-      setLocationsTrigger(true);
-    }
-  };
+  const [collapsed, setCollapsed] = useState(false);
+  const [smallLogo, setSmallLogo] = useState(false);
+
+  useEffect(() => {
+      function updateSize() {
+          if (window.innerWidth > 600) {
+              setCollapsed(false);
+          }
+          if (window.innerWidth < 388) {
+            setSmallLogo(true);
+        } else{
+          setSmallLogo(false);
+        }
+
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  const toggleClasses = [HeaderCSS.navUlMobile, collapsed ? HeaderCSS.activeNav : ''].join(' ');
+  const bar1 = [HeaderCSS.line1, collapsed ? HeaderCSS.a : ''].join(' ');
+  const bar2 = [HeaderCSS.line2, collapsed ? HeaderCSS.a : ''].join(' ');
+  const bar3 = [HeaderCSS.line3, collapsed ? HeaderCSS.a : ''].join(' ');
+
+
+  // const [locationsTrigger, setLocationsTrigger] = useState(false);
+  const [mapHovered, setMapHovered] = useState(false);
 
   const handleMapIcon = (e) => {
     e.preventDefault();
@@ -26,46 +46,37 @@ export default function Header() {
 
   return (
     <header className={HeaderCSS.headerMainStyle}>
-      <div className={HeaderCSS.logoContainer}>
-        <a href="#">
-          <Logo />
-        </a>
+      <div className={HeaderCSS.containerHeader}>
+
+        <div className={HeaderCSS.logoContainer}>
+          <Link to='/'>{smallLogo ?<Logo size="small"/> : <Logo /> }</Link>
+        </div>
+        <nav className={HeaderCSS.navMainStyle}>
+
+          <ul className={HeaderCSS.navUl}>
+            <li><Link to='/locations'>Locations</Link></li>
+            <li><Link to='/hotels'>Hotels</Link></li>
+            <li><Link to='/tours'>Tours</Link></li>
+            <li onMouseEnter={handleMapIcon} onMouseLeave={handleMapIcon}><a href="/home/#"><MapIcon place="header" hovered={mapHovered}></MapIcon></a></li>
+          </ul>
+
+           <ul className={toggleClasses}>
+            <li><Link to='/locations'>Locations</Link></li>
+            <li><Link to='/hotels'>Hotels</Link></li>
+            <li><Link to='/tours'>Tours</Link></li>
+            <li><Link to='/tours'>Top Attractions</Link></li>
+          </ul>
+
+          <div className={HeaderCSS.burgerButton} onClick={() => setCollapsed(!collapsed)}>
+                      <div className={bar1}></div>
+                      <div className={bar2}></div>
+                      <div className={bar3}></div>
+          </div> 
+
+        </nav>
+
+        
       </div>
-      <nav className={HeaderCSS.navMainStyle}>
-        <ul className={HeaderCSS.navUl}>
-          <li onClick={handleLocations}>
-            <div className={HeaderCSS.locationsTrigger}>
-              {locationsTrigger ? (
-                <>
-                  <div>Locations</div>
-                  <i className="fa fa-caret-up"></i>
-                  <div className={HeaderCSS.locationsList}>
-                    <a href="#">Monuments</a>
-                    <a href="#">Activities</a>
-                    <a href="#">Places of Worship</a>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>Locations</div>
-                  <i className="fa fa-caret-down"></i>
-                </>
-              )}
-            </div>
-          </li>
-          <li>
-            <a href="#">Hotels</a>
-          </li>
-          <li>
-            <a href="#">Tours</a>
-          </li>
-          <li onMouseEnter={handleMapIcon} onMouseLeave={handleMapIcon}>
-            <a href="#">
-              <MapIcon place="header" hovered={mapHovered}></MapIcon>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 }

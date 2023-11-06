@@ -78,5 +78,35 @@
 
 
 
+@media screen and (max-width: 992px) {
+
+.divContainer{
+
+    grid-template-areas: 'centerFooter rightFooter' 'socialMedia leftFooter ';
+    grid-template-columns: 2fr 2fr;
+    row-gap: 40px;
+    margin: 30px 24px 0 24px;
+}
+.divContainer div{
+    text-align: center;
+}
+.footerLeft, .socialMedia{
+    margin: auto;
+}
+
+}
+
+@media screen and (max-width: 680px) {
+    .divContainer{
+        grid-template-areas: 'centerFooter' 'rightFooter' 'socialMedia' 'leftFooter ';
+        grid-template-columns: 3fr;
+    }
 
 
+}
+
+@media screen and (max-width: 310px) {
+    span{
+        font-size: 0.9em;
+    }
+}

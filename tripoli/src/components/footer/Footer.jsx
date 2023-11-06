@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FooterCSS from './Footer.module.css'
 import Logo from '../SVGComponents/Logo'
 
@@ -14,6 +14,21 @@ export default function Footer() {
   const [iconHoveredTwitter, setIconHoveredTwitter] = useState(false);
   const [iconHoveredInstagram, setIconHoveredInstagram] = useState(false);
 
+  const [smallLogo, setSmallLogo] = useState(false);
+
+  useEffect(() => {
+    function updateSize() {
+  
+        if (window.innerWidth < 388) {
+          setSmallLogo(true);
+        } else {
+        setSmallLogo(false);
+        }
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+}, []);
 
   const handleFacebookIcon = (e)=>{
     if(iconHoveredFacebook){
@@ -48,7 +63,7 @@ export default function Footer() {
     <footer className={FooterCSS.footerMainStyle}>
       <div className={FooterCSS.divContainer}>
         <div className={FooterCSS.footerLeft}>
-          <Logo place="footer"></Logo>
+         {smallLogo ?<Logo size="small" place="footer"/> : <Logo place="footer"/> }
           <p>We provide assistance for obtaining travel, 
             education, and business travel visas to any country in the world.</p>
         </div>
