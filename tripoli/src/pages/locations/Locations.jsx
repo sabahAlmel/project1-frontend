@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LocationCSS from './Locations.module.css'
 import Header from '../../components/header/Header'
 import HeroImage from '../../components/heroImage/HeroImage'
@@ -15,6 +15,27 @@ import testImages from '../locations/testImages/testImages'
 import ImageSlider from '../../components/slider/ImageSlider'
 
 export default function Locations(props) {
+  // let mywidth = 500;
+  // let myheight = 300;
+const [myWidth, setMyWidth] = useState(500);
+const [myHeight, setMyHeight] = useState(300);
+
+useEffect(() => {
+      function updateSize() {
+
+          if (window.innerWidth < 600) {
+              setMyWidth(window.innerWidth * 0.9);
+          } 
+          if(window.innerWidth < 400){
+            setMyHeight(350);
+          }
+        
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
   let iconColor = props.iconColor || "#111";
 
   let title = props.title;
@@ -41,7 +62,7 @@ export default function Locations(props) {
       <li><span className={LocationCSS.infoSpans}><Money color ={iconColor}></Money>Entrance Fee </span><div>{entranceFee}</div></li>
       </ul>
       <div className={LocationCSS.mapDiv}>
-      <iframe src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3290.737886284978!2d${geoLocation[1]}!3d${geoLocation[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slb!4v1698824057752!5m2!1sen!2slb`} width="500" height="300"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3290.737886284978!2d${geoLocation[1]}!3d${geoLocation[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slb!4v1698824057752!5m2!1sen!2slb`} width={myWidth} height={myHeight}  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
     <article className={LocationCSS.article}>
