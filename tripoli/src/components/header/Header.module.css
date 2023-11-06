@@ -6,6 +6,7 @@
     font-family: 'Outfit'; 
     z-index: 1;
     font-size: 1.2em;
+    /* overflow-x: hidden; */
 }
 
 .containerHeader{
@@ -13,8 +14,8 @@
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    background-color: #fff
-
+    background-color: #fff;
+    max-width: inherit;
 }
 
 .navMainStyle{

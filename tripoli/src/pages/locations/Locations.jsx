@@ -14,6 +14,25 @@ import testImages from "../locations/testImages/testImages";
 import ImageSlider from "../../components/slider/ImageSlider";
 
 export default function Locations(props) {
+  // let mywidth = 500;
+  // let myheight = 300;
+  const [myWidth, setMyWidth] = useState(500);
+  const [myHeight, setMyHeight] = useState(300);
+
+  useEffect(() => {
+    function updateSize() {
+      if (window.innerWidth < 600) {
+        setMyWidth(window.innerWidth * 0.9);
+      }
+      if (window.innerWidth < 400) {
+        setMyHeight(350);
+      }
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   let iconColor = props.iconColor || "#111";
 
   let title = props.title;
