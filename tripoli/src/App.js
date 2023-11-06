@@ -261,7 +261,7 @@ function App() {
               <Home api={api} tourApi={tourApi} elementArray={locationApi} />
             }
           />
-          <Route path="tour" element={<Tour api={tourApi} />} />
+          <Route path="tours" element={<Tour api={tourApi} />} />
           <Route
             path="hotels"
             element={<Hotel api={locationApi} home="false" />}

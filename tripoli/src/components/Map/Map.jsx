@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Map.module.css";
 import WhenClick from "./WhenClick";
 import React, { useState, useEffect } from "react";

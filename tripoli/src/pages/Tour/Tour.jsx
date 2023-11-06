@@ -1,20 +1,13 @@
 import React from "react";
 import styles from "./Tour.module.css";
-// import HeroImage from "../../components/heroImage/HeroImage";
+import HeroImage from "../../components/heroImage/HeroImage";
 import TourCard from "../../components/TourCard/TourCard";
+import tour from "../../images/tripoli.jpg";
 
 function Tour({ api }) {
-  let source = "";
-  api.map((element) => {
-    if (element.title === "Hero image") {
-      source = element.image;
-    }
-  });
-
   return (
     <>
-      <img src={source} className={styles.img} alt="tripoli" />
-      {/* <HeroImage image={source} /> */}
+      <HeroImage image={tour} />
       <TourCard api={api} home="false" />
     </>
   );
