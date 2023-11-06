@@ -262,7 +262,10 @@ function App() {
             }
           />
           <Route path="tour" element={<Tour api={tourApi} />} />
-          <Route path="hotels" element={<Hotel home="false" />} />
+          <Route
+            path="hotels"
+            element={<Hotel api={locationApi} home="false" />}
+          />
           <Route
             path="locations"
             element={<AllLocations api={locationApi} />}

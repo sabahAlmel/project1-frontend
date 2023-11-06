@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import styles from "./Dash.module.css";
 
 function Add() {
   const [title, setTitle] = useState("");
@@ -33,25 +34,27 @@ function Add() {
   };
 
   return (
-    <main id="siteMain">
-      <div className="container">
-        <div className="boxNav dFlex justifyBewteen">
-          <div className="filter">
+    <main id={styles["siteMain"]}>
+      <div className={styles.containerDash}>
+        <div
+          className={`${styles.boxNav} ${styles.dFlex} ${styles.justifyBewteen}`}
+        >
+          <div className={styles.filter}>
             <Link to="/admin/tours">
               <i className="fas fa-angle-double-left"></i> All Heritage
             </Link>
           </div>
         </div>
-        <div className="formTitle textCenter">
-          <h2 className="textDark">New Heritage</h2>
-          <span className="textLight">
-            Use the form below to create a new Heritage
+        <div className={`${styles.formTitle} ${styles.textCenter}`}>
+          <h2 className={styles.textDark}>New Heritage</h2>
+          <span className={styles.textLight}>
+            Use the form below to create a new Tour
           </span>
         </div>
-        <form id="addHeritage" encType="multipart/form-data">
-          <div className="newHeritage">
-            <div className="formGroup">
-              <label htmlFor="title" className="textLight">
+        <form id={styles["addHeritage"]} encType="multipart/form-data">
+          <div className={styles.newHeritage}>
+            <div className={styles.formGroup}>
+              <label htmlFor="title" className={styles.textLight}>
                 Title
               </label>
               <input
@@ -61,8 +64,8 @@ function Add() {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="description" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="description" className={styles.textLight}>
                 Description
               </label>
               <input
@@ -72,8 +75,8 @@ function Add() {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="link" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="link" className={styles.textLight}>
                 Link
               </label>
               <input
@@ -83,8 +86,8 @@ function Add() {
                 onChange={(e) => setLink(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="image" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="image" className={styles.textLight}>
                 Image
               </label>
               <input
@@ -94,10 +97,10 @@ function Add() {
                 onChange={(e) => setImage(e.target.files[0])}
               />
             </div>
-            <div className="formGroup">
+            <div className={styles.formGroup}>
               <button
                 type="submit"
-                className="btn textDark update"
+                className={`${styles.btn} ${styles.textDark} ${styles.update}`}
                 onClick={handleSubmit}
               >
                 Save

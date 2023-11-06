@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./Hotel.module.css";
 import hotel from "../../images/hotel.jpeg";
-import HotelCard from "../../components/HotelCard/HotelContainer";
+import HotelContainer from "../../components/HotelCard/HotelContainer";
 
-function Hotel() {
+function Hotel({ api }) {
   return (
     <div>
       <img src={hotel} alt="hotel" className={styles.image} />
-      <HotelCard />
+      <HotelContainer elementArray={api} />
     </div>
   );
 }
