@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LocationCSS from "./Locations.module.css";
 import Header from "../../components/header/Header";
 import HeroImage from "../../components/heroImage/HeroImage";

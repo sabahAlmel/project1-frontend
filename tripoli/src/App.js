@@ -267,7 +267,7 @@ function App() {
             path="locations"
             element={<AllLocations api={locationApi} />}
           />
-        </Route>
+       
         <Route
           path="/Location"
           element={
@@ -281,6 +281,7 @@ function App() {
             ></Locations>
           }
         ></Route>
+         </Route>
 
         <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
         <Route
