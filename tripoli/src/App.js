@@ -267,20 +267,20 @@ function App() {
             path="locations"
             element={<AllLocations api={locationApi} />}
           />
+          <Route
+            path="/Location"
+            element={
+              <Locations
+                title="Baalback"
+                address="there on the fifth street"
+                time="60 minutes"
+                rating="5"
+                fee="$5"
+                iconColor="#123456"
+              ></Locations>
+            }
+          />
         </Route>
-        <Route
-          path="/Location"
-          element={
-            <Locations
-              title="Baalback"
-              address="there on the fifth street"
-              time="60 minutes"
-              rating="5"
-              fee="$5"
-              iconColor="#123456"
-            ></Locations>
-          }
-        ></Route>
 
         <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
         <Route
