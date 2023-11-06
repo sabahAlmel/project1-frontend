@@ -262,11 +262,15 @@ function App() {
             }
           />
           <Route path="tour" element={<Tour api={tourApi} />} />
-          <Route path="hotels" element={<Hotel home="false" />} />
+          <Route
+            path="hotels"
+            element={<Hotel api={locationApi} home="false" />}
+          />
           <Route
             path="locations"
             element={<AllLocations api={locationApi} />}
           />
+<<<<<<< HEAD
        
         <Route
           path="/Location"
@@ -282,6 +286,22 @@ function App() {
           }
         ></Route>
          </Route>
+=======
+          <Route
+            path="/Location"
+            element={
+              <Locations
+                title="Baalback"
+                address="there on the fifth street"
+                time="60 minutes"
+                rating="5"
+                fee="$5"
+                iconColor="#123456"
+              ></Locations>
+            }
+          />
+        </Route>
+>>>>>>> 4929903d9fe31f5787e90f80925162b9358dd890
 
         <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
         <Route

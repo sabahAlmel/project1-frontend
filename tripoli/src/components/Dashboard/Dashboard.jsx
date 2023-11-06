@@ -1,5 +1,5 @@
 import React from "react";
-import "./Dash.css";
+import styles from "./Dash.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -9,18 +9,20 @@ function Dashboard({ api }) {
   }
   const keys = Object.keys(api[0]);
   return (
-    <main id="siteMain">
-      <div className="container">
-        <div className="boxNav dFlex justifyBewteen">
-          <Link to="/admin/tours/add" className="borderShadow">
-            <span className="textGradient">
+    <main id={styles["siteMain"]}>
+      <div className={styles.containerDash}>
+        <div
+          className={`${styles.boxNav} ${styles.dFlex} ${styles.justifyBewteen}`}
+        >
+          <Link to="/admin/tours/add" className={styles.borderShadow}>
+            <span className={styles.textGradient}>
               New Tour <i className="fa-solid fa-user"></i>
             </span>
           </Link>
         </div>
         <form action="/admin/tours" method="POST">
-          <table className="table">
-            <thead className="theadDark">
+          <table className={styles.table}>
+            <thead className={styles.theadDark}>
               <tr>
                 {keys.map((element, index) => {
                   return <th key={index}>{element}</th>;
@@ -39,9 +41,9 @@ function Dashboard({ api }) {
                       <Link
                         // /admin/update/:id
                         to={`/admin/tours/update/${element.id}`}
-                        className="btn borderShadow update"
+                        className={`${styles.btn} ${styles.borderShadow} ${styles.update}`}
                       >
-                        <span className="textGradient">
+                        <span className={styles.textGradient}>
                           <i className="fas fa-pencil-alt"></i>
                         </span>
                       </Link>
@@ -53,9 +55,9 @@ function Dashboard({ api }) {
                           console.log("deleted " + response.data);
                         }}
                         // to={`/admin/tours/delete/${element.id}`}
-                        className="btn borderShadow delete"
+                        className={`${styles.btn} ${styles.borderShadow} ${styles.delete}`}
                       >
-                        <span className="text-gradient">
+                        <span className={styles.textGradient}>
                           <i className="fas fa-times"></i>
                         </span>
                       </a>

@@ -6,8 +6,8 @@ import style from "./card.module.css";
 
 import CarIcon from "../vector/CarIcon";
 
-const Card = ({data}) => {
-  console.log("data to card")
+const Card = ({ data }) => {
+  console.log("data to card");
   // const data = props.data;
 
   return (

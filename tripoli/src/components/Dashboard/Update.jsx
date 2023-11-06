@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import styles from "./Dash.module.css";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -57,25 +58,27 @@ function Update({ api }) {
   };
 
   return (
-    <main id="siteMain">
-      <div className="container">
-        <div className="boxNav dFlex justifyBewteen">
-          <div className="filter">
+    <main id={styles["siteMain"]}>
+      <div className={styles.containerDash}>
+        <div
+          className={`${styles.boxNav} ${styles.dFlex} ${styles.justifyBewteen}`}
+        >
+          <div className={styles.filter}>
             <Link to="/admin/tours">
               <i className="fas fa-angle-double-left"></i> All Heritage
             </Link>
           </div>
         </div>
-        <div className="formTitle textCenter">
-          <h2 className="textDark">Update Heritage</h2>
-          <span className="textLight">
-            Use The below form to update a Heritage
+        <div className={`${styles.formTitle} ${styles.textCenter}`}>
+          <h2 className={styles.textDark}>Update Heritage</h2>
+          <span className={styles.textLight}>
+            Use The below form to update a Tour
           </span>
         </div>
-        <form id="updateHeritage" encType="multipart/form-data">
-          <div className="newHeritage">
-            <div className="formGroup">
-              <label htmlFor="title" className="textLight">
+        <form id={styles["updateHeritage"]} encType="multipart/form-data">
+          <div className={styles.newHeritage}>
+            <div className={styles.formGroup}>
+              <label htmlFor="title" className={styles.textLight}>
                 Title
               </label>
               <input
@@ -85,8 +88,8 @@ function Update({ api }) {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="description" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="description" className={styles.textLight}>
                 Description
               </label>
               <input
@@ -96,8 +99,8 @@ function Update({ api }) {
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="link" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="link" className={styles.textLight}>
                 Link
               </label>
               <input
@@ -107,8 +110,8 @@ function Update({ api }) {
                 onChange={(e) => setLink(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="image" className="textLight">
+            <div className={styles.formGroup}>
+              <label htmlFor="image" className={styles.textLight}>
                 Image
               </label>
               <input
@@ -118,10 +121,10 @@ function Update({ api }) {
                 onChange={(e) => setImage(e.target.files[0])}
               />
             </div>
-            <div className="formGroup">
+            <div className={styles.formGroup}>
               <button
                 type="submit"
-                className="btn textDark update"
+                className={`${styles.btn} ${styles.textDark} ${styles.update}`}
                 onClick={handleSubmit}
               >
                 Save

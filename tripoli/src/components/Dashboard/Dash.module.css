@@ -5,17 +5,11 @@
   --border-btn: #edf2f4;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
 }
 
-.container {
+.containerDash {
   max-width: 1024px;
   margin: auto;
 }
@@ -61,16 +55,16 @@ a {
   margin-top: 6em;
 }
 
-#siteMain .container .boxNav > a {
+#siteMain .containerDash .boxNav > a {
   font-size: 1em;
   padding: 0.5em 1em;
 }
 
-#siteMain .container .boxNav > a:hover {
+#siteMain .containerDash .boxNav > a:hover {
   background-color: #d5d8fa;
 }
 
-#siteMain .container form {
+#siteMain .containerDash form {
   margin: 2em 0;
 }
 
@@ -160,7 +154,20 @@ table {
   font-size: 1em;
   border-radius: 0.2em;
 }
-
+#updateHeritage .formGroup input[type="file"]::file-selector-button,
+#addHeritage .formGroup input[type="file"]::file-selector-button {
+  border: none;
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 0.2em;
+  background-color: var(--dark);
+  margin: 5px;
+}
+#updateHeritage .formGroup input[type="file"]::file-selector-button:hover,
+#addHeritage .formGroup input[type="file"]::file-selector-button:hover {
+  background-color: #d5d8fa;
+  color: var(--dark);
+}
 #updateHeritage .formGroup .btn,
 #addHeritage .formGroup .btn {
   width: 100%;
