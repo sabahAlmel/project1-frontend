@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export default function ImageSlider(props) {
     const imagesArray = props.images;
     const [imageIndex,setImageIndex] = useState(0);
+    
     const leftButtonHandler = ()=>{
         let index;
         if(imageIndex){
