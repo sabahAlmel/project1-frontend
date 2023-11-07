@@ -31,142 +31,144 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Add from "./components/Dashboard/Add";
 import Update from "./components/Dashboard/Update";
 import ContainerOfThePage from "./components/ContainerOfThePage/ContainerOfThePage";
+import RecursiveTree from "./components/recursive/RecursiveTree";
 
 function App() {
   let [tourApi, setTourApi] = useState([]);
+  let [locationApi, setLocationApi] = useState([]);
 
-  let locationApi = [
-    {
-      id: 1,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 1,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 1,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 2,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 2,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 2,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 3,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 3,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 3,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-    {
-      id: 3,
-      title: "Test Api title",
-      address: "the test address",
-      timeFromCenter: "5min",
-      googleRating: 5,
-      entranceFee: "$5",
-      description: "This is my long description",
-      smallDescription: "this is my short description",
-      geoLocation: [1.5, 2.5],
-      images: ["aaa", "bbb"],
-      heroImage: homePageImage,
-    },
-  ];
+  // let locationApi = [
+  //   {
+  //     id: 1,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 1,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 1,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Test Api title",
+  //     address: "the test address",
+  //     timeFromCenter: "5min",
+  //     googleRating: 5,
+  //     entranceFee: "$5",
+  //     description: "This is my long description",
+  //     smallDescription: "this is my short description",
+  //     geoLocation: [1.5, 2.5],
+  //     images: ["aaa", "bbb"],
+  //     heroImage: homePageImage,
+  //   },
+  // ];
 
   let api = [
     {
@@ -206,6 +208,8 @@ function App() {
       heroImage: Khan,
     },
   ];
+
+
   // let tourApi = [
   //   {
   //     id: 1,
@@ -247,8 +251,21 @@ function App() {
       }
     }
     fetchData();
+
+    async function fetchLocation() {
+      try {
+        const response = await axios.get("http://localhost:4000/locations");
+        setLocationApi(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchLocation();
+
   }, []);
-  console.log(tourApi);
+  // console.log(tourApi);
+  console.log(locationApi)
+
   return (
     <>
       {/* <Header /> */}
@@ -291,6 +308,7 @@ function App() {
           element={<Update api={tourApi} />}
         />
         <Route path="/admin/tours/add" element={<Add />} />
+        <Route path="/demo" element={<RecursiveTree label="Root" depth={3} />} /> {/*delete*/}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}
