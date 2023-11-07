@@ -285,11 +285,8 @@ function App() {
           />
         </Route>
 
-        <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
-        <Route
-          path="/admin/tours/update/:id"
-          element={<Update api={tourApi} />}
-        />
+        <Route path="/admin/tours" element={<Dashboard />} />
+        <Route path="/admin/tours/update/:id" element={<Update />} />
         <Route path="/admin/tours/add" element={<Add />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

@@ -5,42 +5,60 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
-function Update({ api }) {
+function Update() {
   let { id } = useParams();
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [image, setImage] = useState(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    link: "",
+    image: null,
+  });
+  let [tourApi, setTourApi] = useState([]);
+
   useEffect(() => {
-    api.map((element) => {
-      if (element.id == id) {
-        console.log(element);
-        return (
-          setTitle(element.title),
-          setDescription(element.description),
-          setLink(element.link),
-          setImage(element.image)
-        );
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:4000/tours");
+        setTourApi(response.data);
+      } catch (error) {
+        console.error(error);
       }
-    });
+    }
+    fetchData();
   }, []);
 
-  // const element = api.find({ id: id });
-  // console.log(element);
-  // setTitle(element.title);
-  // setDescription(element.description);
-  // setLink(element.link);
-  // setImage(element.image);
+  useEffect(() => {
+    tourApi.map((element) => {
+      if (element.id == id) {
+        console.log(element);
+        setFormData({
+          ...formData,
+          title: element.title,
+          description: element.description,
+          link: element.link,
+          image: element.image,
+        });
+      }
+    });
+  }, [tourApi]);
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(title, description, link, image);
       let formDataToSend = new FormData();
-      formDataToSend.append("title", title);
-      formDataToSend.append("description", description);
-      formDataToSend.append("link", link);
-      formDataToSend.append("image", image);
+      formDataToSend.append("title", formData.title);
+      formDataToSend.append("description", formData.description);
+      formDataToSend.append("link", formData.link);
+      formDataToSend.append("image", formData.image);
       console.log(formDataToSend);
       const response = await axios.put(
         `http://localhost:4000/tours/update/${id}`,
@@ -52,8 +70,10 @@ function Update({ api }) {
         }
       );
       console.log("Item updated:", response.data);
+      alert("Item Updated");
     } catch (error) {
       console.error("Error adding item:", error);
+      alert("Item not Updated");
     }
   };
 
@@ -65,12 +85,12 @@ function Update({ api }) {
         >
           <div className={styles.filter}>
             <Link to="/admin/tours">
-              <i className="fas fa-angle-double-left"></i> All Heritage
+              <i className="fas fa-angle-double-left"></i> All Tours
             </Link>
           </div>
         </div>
         <div className={`${styles.formTitle} ${styles.textCenter}`}>
-          <h2 className={styles.textDark}>Update Heritage</h2>
+          <h2 className={styles.textDark}>Update a Tour</h2>
           <span className={styles.textLight}>
             Use The below form to update a Tour
           </span>
@@ -84,8 +104,8 @@ function Update({ api }) {
               <input
                 type="text"
                 name="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={formData.title}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -95,8 +115,8 @@ function Update({ api }) {
               <input
                 type="text"
                 name="description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={formData.description}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -106,8 +126,8 @@ function Update({ api }) {
               <input
                 type="text"
                 name="link"
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
+                value={formData.link}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -118,7 +138,7 @@ function Update({ api }) {
                 type="file"
                 name="image"
                 accept="image/*"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
