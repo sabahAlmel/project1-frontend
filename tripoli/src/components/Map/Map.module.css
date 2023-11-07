@@ -22,27 +22,27 @@
 .map .first:hover {
   transform: scale(1.5);
 }
-.map .imagesOnMap1 {
+.map .khan {
   top: 30%;
   left: 50%;
 }
-.map .imagesOnMap2 {
+.map .citadel {
   top: 40%;
   right: 20%;
 }
-.map .imagesOnMap3 {
+.map .taynal {
   top: 70%;
   left: 60%;
 }
-.map .imagesOnMap4 {
+.map .corniche {
   left: 15%;
   top: 25%;
 }
-.map .imagesOnMap5 {
+.map .rachid {
   top: 55%;
   left: 33%;
 }
-.map .imagesOnMap6 {
+.map .mansouri {
   top: 10%;
   right: 10%;
 }

@@ -24,11 +24,13 @@ const WhenClick = ({
       }}
     >
       <div className={styles.layer}>
-        <img src={src} alt="this is image" />
+        <img src={`http://localhost:4000/${src}`} alt="this is image" />
         <div className={styles.bubble}>
           <h3>{name}</h3>
           <p>{desc}</p>
-          <Link to="/places">See more</Link>
+          <Link to={`/location/${name.split(" ")[0].toLowerCase()}`}>
+            See more
+          </Link>
         </div>
       </div>
     </div>

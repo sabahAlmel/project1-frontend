@@ -4,6 +4,7 @@ import WhenClick from "./WhenClick";
 import React, { useState, useEffect } from "react";
 
 const Map = ({ api }) => {
+  let newApi = api.slice(0, 6);
   let [displayImage, setDisplayImage] = useState("");
   let [hideImages, setHideImages] = useState("");
   let [name, setName] = useState("");
@@ -16,9 +17,9 @@ const Map = ({ api }) => {
     const handleResize = () => {
       if (window.innerWidth <= 992) {
         setResponsiveStyle("visible");
-        setSource(api[0].heroImage);
-        setName(api[0].title);
-        setDesc(api[0].smallDescription);
+        setSource(newApi[0].heroImage);
+        setName(newApi[0].title);
+        setDesc(newApi[0].smallDescription);
       } else {
         setResponsiveStyle("");
       }
@@ -32,16 +33,16 @@ const Map = ({ api }) => {
 
   return (
     <div className={styles.map}>
-      {api.map((element) => {
+      {newApi.map((element) => {
         if (hideImages === "") {
           return (
             <img
               key={element.title}
-              src={element.heroImage}
-              className={`${styles[`imagesOnMap${element.id}`]} ${
-                styles.first
-              } }}`}
-              alt="image"
+              src={`http://localhost:4000/${element.heroImage}`}
+              className={`${
+                styles[element.title.split(" ")[0].toLowerCase()]
+              } ${styles.first} }}`}
+              alt="map"
               onClick={() => {
                 setSource(element.heroImage);
                 setName(element.title);
