@@ -305,7 +305,6 @@ function App() {
         <Route path="/admin/tours" element={<Dashboard />} />
         <Route path="/admin/tours/update/:id" element={<Update />} />
         <Route path="/admin/tours/add" element={<Add />} />
-        <Route path="/demo" element={<RecursiveTree label="Root" depth={3} />} /> {/*delete*/}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}
