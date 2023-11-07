@@ -209,7 +209,6 @@ function App() {
     },
   ];
 
-
   // let tourApi = [
   //   {
   //     id: 1,
@@ -242,7 +241,7 @@ function App() {
   // ];
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchTours() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
         setTourApi(response.data);
@@ -250,7 +249,7 @@ function App() {
         console.error(error);
       }
     }
-    fetchData();
+    fetchTours();
 
     async function fetchLocation() {
       try {
@@ -261,10 +260,9 @@ function App() {
       }
     }
     fetchLocation();
-
   }, []);
   // console.log(tourApi);
-  console.log(locationApi)
+  console.log(locationApi);
 
   return (
     <>
@@ -275,7 +273,11 @@ function App() {
             index
             path="/"
             element={
-              <Home api={api} tourApi={tourApi} elementArray={locationApi} />
+              <Home
+                api={locationApi}
+                tourApi={tourApi}
+                elementArray={locationApi}
+              />
             }
           />
           <Route path="tours" element={<Tour api={tourApi} />} />
@@ -301,11 +303,14 @@ function App() {
             }
           />
         </Route>
-
         <Route path="/admin/tours" element={<Dashboard />} />
         <Route path="/admin/tours/update/:id" element={<Update />} />
         <Route path="/admin/tours/add" element={<Add />} />
-        <Route path="/demo" element={<RecursiveTree label="Root" depth={3} />} /> {/*delete*/}
+        <Route
+          path="/demo"
+          element={<RecursiveTree label="Root" depth={3} />}
+        />{" "}
+        {/*delete*/}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       {/* <Footer /> */}
