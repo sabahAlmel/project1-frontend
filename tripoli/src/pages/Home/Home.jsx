@@ -24,7 +24,7 @@ function Home({ api, tourApi, elementArray }) {
       </Link>
       <h3 className={styles.heading}>Tours</h3>
       <TourCard api={tourApi} home="true" />
-      <Link to="/tour" className={styles.link}>
+      <Link to="/tours" className={styles.link}>
         View more &gt;&gt;
       </Link>
     </>

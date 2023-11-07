@@ -8,7 +8,7 @@
 }
 
 .container img {
-  width: 80%;
+  width: 60%;
   height: 100px;
   cursor: pointer;
   transition: all 1s cubic-bezier(0, 0, 0.2, 1);
@@ -40,7 +40,7 @@
   color: #496c97;
   border: 1px solid #496c97;
 }
-@media (max-width: 772px) {
+@media (max-width: 768px) {
   .container {
     width: 60%;
   }
@@ -61,6 +61,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 100px;
+    width: 150px;
   }
 }

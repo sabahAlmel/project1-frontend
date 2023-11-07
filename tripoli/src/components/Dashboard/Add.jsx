@@ -4,19 +4,33 @@ import axios from "axios";
 import styles from "./Dash.module.css";
 
 function Add() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
-  const [image, setImage] = useState(null);
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [link, setLink] = useState("");
+  // const [image, setImage] = useState(null);
 
+  const [formData, setFormData] = useState({
+    title: "",
+    description: "",
+    link: "",
+    image: null,
+  });
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const formDataToSend = new FormData();
-      formDataToSend.append("title", title);
-      formDataToSend.append("description", description);
-      formDataToSend.append("link", link);
-      formDataToSend.append("image", image);
+      formDataToSend.append("title", formData.title);
+      formDataToSend.append("description", formData.description);
+      formDataToSend.append("link", formData.link);
+      formDataToSend.append("image", formData.image);
 
       const response = await axios.post(
         "http://localhost:4000/tours/add",
@@ -27,9 +41,11 @@ function Add() {
           },
         }
       );
-      console.log("Item added:", response.data);
+      // console.log("Item added:", response.data);
+      alert("Item added");
     } catch (error) {
       console.error("Error adding item:", error);
+      alert("Item not added");
     }
   };
 
@@ -41,12 +57,12 @@ function Add() {
         >
           <div className={styles.filter}>
             <Link to="/admin/tours">
-              <i className="fas fa-angle-double-left"></i> All Heritage
+              <i className="fas fa-angle-double-left"></i> All Tours
             </Link>
           </div>
         </div>
         <div className={`${styles.formTitle} ${styles.textCenter}`}>
-          <h2 className={styles.textDark}>New Heritage</h2>
+          <h2 className={styles.textDark}>New Tour</h2>
           <span className={styles.textLight}>
             Use the form below to create a new Tour
           </span>
@@ -61,7 +77,7 @@ function Add() {
                 type="text"
                 name="title"
                 placeholder="title"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -72,7 +88,7 @@ function Add() {
                 type="text"
                 name="description"
                 placeholder="description"
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -83,7 +99,7 @@ function Add() {
                 type="text"
                 name="link"
                 placeholder="https://www.google.com"
-                onChange={(e) => setLink(e.target.value)}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>
@@ -94,7 +110,7 @@ function Add() {
                 type="file"
                 name="image"
                 accept="image/*"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={handleChange}
               />
             </div>
             <div className={styles.formGroup}>

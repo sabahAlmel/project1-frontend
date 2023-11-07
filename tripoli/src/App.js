@@ -278,7 +278,7 @@ function App() {
               <Home api={api} tourApi={tourApi} elementArray={locationApi} />
             }
           />
-          <Route path="tour" element={<Tour api={tourApi} />} />
+          <Route path="tours" element={<Tour api={tourApi} />} />
           <Route
             path="hotels"
             element={<Hotel api={locationApi} home="false" />}
@@ -302,11 +302,8 @@ function App() {
           />
         </Route>
 
-        <Route path="/admin/tours" element={<Dashboard api={tourApi} />} />
-        <Route
-          path="/admin/tours/update/:id"
-          element={<Update api={tourApi} />}
-        />
+        <Route path="/admin/tours" element={<Dashboard />} />
+        <Route path="/admin/tours/update/:id" element={<Update />} />
         <Route path="/admin/tours/add" element={<Add />} />
         <Route path="/demo" element={<RecursiveTree label="Root" depth={3} />} /> {/*delete*/}
         <Route path="/*" element={<NotFound />} />

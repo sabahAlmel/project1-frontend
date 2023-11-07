@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Dash.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function Dashboard({ api }) {
-  if (!api || api.length === 0) {
+function Dashboard() {
+  let [tourApi, setTourApi] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:4000/tours");
+        setTourApi(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, [tourApi]);
+  if (!tourApi || tourApi.length === 0) {
     return <div>No data available.</div>;
   }
-  const keys = Object.keys(api[0]);
+  const keys = Object.keys(tourApi[0]);
   return (
     <main id={styles["siteMain"]}>
       <div className={styles.containerDash}>
@@ -31,7 +44,7 @@ function Dashboard({ api }) {
               </tr>
             </thead>
             <tbody>
-              {api.map((element, index) => {
+              {tourApi.map((element, index) => {
                 return (
                   <tr key={index}>
                     {keys.map((key) => (
@@ -53,8 +66,8 @@ function Dashboard({ api }) {
                             `http://localhost:4000/tours/delete/${element.id}`
                           );
                           console.log("deleted " + response.data);
+                          alert("Data is deleted");
                         }}
-                        // to={`/admin/tours/delete/${element.id}`}
                         className={`${styles.btn} ${styles.borderShadow} ${styles.delete}`}
                       >
                         <span className={styles.textGradient}>
