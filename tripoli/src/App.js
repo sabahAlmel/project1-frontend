@@ -37,6 +37,7 @@ function App() {
   let [tourApi, setTourApi] = useState([]);
   let [locationApi, setLocationApi] = useState([]);
   let [chosenLocation, setChosenLocation] = useState([]);
+  let [hotels, setHotels] = useState([]);
 
   // let locationApi = [
   //   {
@@ -58,6 +59,8 @@ function App() {
     async function fetchTours() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
+        console.log(response.data);
+
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -74,10 +77,20 @@ function App() {
       }
     }
     fetchLocation();
+    async function fetchHotels() {
+      try {
+        const response = await axios.get("http://localhost:4000/api/hotel");
+        console.log(response.data);
+        setHotels(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchHotels();
+  
   }, []);
-  // console.log(tourApi);
-  console.log(locationApi);
-
+  console.log("tours", tourApi);
+  console.log("hotels", hotels);
   return (
     <>
       {/* <Header /> */}
@@ -90,14 +103,14 @@ function App() {
               <Home
                 api={locationApi}
                 tourApi={tourApi}
-                elementArray={locationApi}
+                hotelapi={hotels}
               />
             }
           />
           <Route path="tours" element={<Tour api={tourApi} />} />
           <Route
             path="hotels"
-            element={<Hotel api={locationApi} home="false" />}
+            element={<Hotel hotelapi={hotels} home="false" />}
           />
           <Route
             path="locations"

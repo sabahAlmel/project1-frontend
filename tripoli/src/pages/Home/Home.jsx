@@ -19,7 +19,7 @@ function Home({ api, tourApi, elementArray }) {
 
       <Map api={api} />
       <h3 className={styles.heading}>Hotel</h3>
-      <HotelContainer elementArray={newApi} />
+      <HotelContainer hotelapi={newApi} />
       <Link to="/hotels" className={styles.link}>
         View more &gt;&gt;
       </Link>

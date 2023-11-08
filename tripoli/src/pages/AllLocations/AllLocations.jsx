@@ -3,6 +3,9 @@ import Button from "../../components/buttonLocation/Button";
 import HeroImage from "../../components/heroImage/HeroImage";
 import heroTestImage from "../../components/heroImage/tripoli.jpg";
 import ContainerLocation from "../../components/containerLocation/ContainerLocation";
+import Activities from "../../components/vector/Activities";
+import Monuments from "../../components/vector/Monuments";
+import Worshop from "../../components/vector/Worshop";
 
 export default function AllLocations(props) {
   const [whichButtonClicked, setWhichButtonClicked] = useState("");
@@ -60,16 +63,19 @@ export default function AllLocations(props) {
           <ContainerLocation
             elementArray={idOneAll}
             sentence="Discover Tripoli's Monuments"
+            vector="monuments"
           />
         ) : whichButtonClicked == 2 ? (
           <ContainerLocation
             elementArray={idTwoAll}
             sentence="Discover Tripoli's Activities"
+            vector="activities"
           />
         ) : whichButtonClicked == 3 ? (
           <ContainerLocation
             elementArray={idThreeAll}
             sentence="Discover Tripoli's places of worship"
+            vector="worshop"
           />
         ) : null
       ) : (
@@ -77,14 +83,17 @@ export default function AllLocations(props) {
           <ContainerLocation
             elementArray={idOne}
             sentence="Discover Tripoli's Monuments"
+            vector="monuments"
           />
           <ContainerLocation
             elementArray={idTwo}
             sentence="Discover Tripoli's Activities"
+            vector="activities"
           />
           <ContainerLocation
             elementArray={idThree}
             sentence="Discover Tripoli's places of worship"
+            vector="worshop"
           />
         </>
       )}

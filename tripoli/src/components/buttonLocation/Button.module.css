@@ -1,8 +1,8 @@
 .buttonsPage{
     display: flex;
     flex-direction: column;
-    margin-top: 7rem;
-    margin-bottom: 10rem;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
 }
 
 .buttons, .button{
@@ -27,10 +27,12 @@
 }
 .button:hover{
     /* background: #cbcbcb;  */
-    box-shadow:1px 1px 10px #314865;
+    /* box-shadow:0px 10px 5px  #314865; */
+
     border-radius: 3px;
 }
 
 .active1 , .active2, .active3{
-    background-color: #111 ;
+    box-shadow:0px 10px 5px  #314865;
+    background-color: rgb(49, 72, 101,0.05) ;
 }
