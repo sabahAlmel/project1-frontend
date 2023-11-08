@@ -34,7 +34,7 @@ import ContainerOfThePage from "./components/ContainerOfThePage/ContainerOfThePa
 
 function App() {
   let [tourApi, setTourApi] = useState([]);
-  let [hotels, setHotels] = useState([])
+  let [hotels, setHotels] = useState([]);
 
   let locationApi = [
     {
@@ -242,26 +242,27 @@ function App() {
     async function fetchData() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
+        console.log(response.data);
+
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
       }
     }
     fetchData();
-      async function fetchHotels() {
-        try {
-          const response = await axios.get("http://localhost:4000/api/hotel");
-          setHotels(response.data);
-  console.log(response.data)
-
-        } catch (error) {
-          console.error(error);
-        }
+    async function fetchHotels() {
+      try {
+        const response = await axios.get("http://localhost:4000/api/hotel");
+        console.log(response.data);
+        setHotels(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
     fetchHotels();
   }, []);
-  console.log("tours",tourApi);
-  console.log("hotels",hotels);
+  console.log("tours", tourApi);
+  console.log("hotels", hotels);
   return (
     <>
       {/* <Header /> */}
@@ -270,9 +271,7 @@ function App() {
           <Route
             index
             path="/"
-            element={
-              <Home api={api} tourApi={tourApi} elementArray={locationApi} />
-            }
+            element={<Home api={api} tourApi={tourApi} hotelapi={hotels} />}
           />
           <Route path="tour" element={<Tour api={tourApi} />} />
           <Route

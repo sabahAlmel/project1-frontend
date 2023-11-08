@@ -1,15 +1,27 @@
-import luxuryHotel from "../../images/essentia-luxury-hotel.jpg";
-
 import LocationIcon from "../vector/LocationIcon";
-
 import style from "./card.module.css";
-
 import CarIcon from "../vector/CarIcon";
+import Star from "..//SVGComponents/Star"
 
-const Card = ({ data }) => {
-  console.log("data to card",data);
+
+const Card = ({ data, type }) => {
+  // console.log("data to card",data);
   // const data = props.data;
+let cardImage = "";
+let cardTime = "";
+let cardRating = "";
+let locationId = data._id;
+if(type === "hotel"){
+  cardImage = data.image;
+  cardTime = data.time;
+  cardRating = data.rating;
+}
+if(type ==="location"){
+  cardImage = data.heroImage;
+  cardTime = data.timeFromCenter;
+  cardRating = data.googleRating;
 
+}
   return (
     <div>
       <div className={style.card}>
@@ -20,7 +32,7 @@ const Card = ({ data }) => {
             className={style.goToHotel} rel="noreferrer"
           >
             <img
-              src={data.image}
+              src={`http://localhost:4000/${cardImage}`}
               alt="hotel_image"
               className={style.hotelImg}
             />
@@ -34,10 +46,14 @@ const Card = ({ data }) => {
           </div>
           <div className={style.CarIconStayle}>
             <CarIcon />
-            <p className={style.time}>{data.time} min</p>
+            <p className={style.time}>{cardTime} {type ==='hotel' ? <>min</> : ""}</p>
           </div>
           <div className={style.priceButtun}>
-            <p className={style.price}>{data.rating}</p>
+            <div className={style.starRatiang}>
+            <Star color="#ffd700"/>
+            <p className={style.price}>{cardRating}</p>
+            </div>
+            {type==="hotel" ?
             <a
               href={data.link}
               target="_blank"
@@ -45,6 +61,17 @@ const Card = ({ data }) => {
             >
               <button className={style.buttonView}>View</button>
             </a>
+
+            :
+            
+            <a
+            href={`/location/${locationId}`}
+            
+            className={style.goToHotel} rel="noreferrer"
+          >
+            <button className={style.buttonView}>View</button>
+          </a>
+                }
           </div>
         </div>
       </div>

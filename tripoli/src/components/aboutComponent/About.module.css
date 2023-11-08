@@ -25,7 +25,7 @@
 
 .title{
   font-size: 55px;
-  font-weight: 400;
+  font-weight:600;
 }
 
 .paragAbout {
@@ -52,7 +52,7 @@
     flex-direction: column;
     justify-content: space-evenly;
   align-items: center;
-    margin-top: 0px;
+    margin-top: 1rem;
   }
   .aboutImage {
     width: 100%;
@@ -71,6 +71,9 @@
       margin-left: 10px;
   }
   .RowReverseDispllay{
+    display: none;
+  }
+  .line{
     display: none;
   }
 }
