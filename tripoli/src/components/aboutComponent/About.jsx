@@ -1,4 +1,4 @@
-import image1 from "../../images/images.jpeg"
+import image1 from "../../images/"
 import style from "./About.module.css";
 import image2 from "../../images/Tripoli-Cityscape.jpg"
 const About = (props) => {
