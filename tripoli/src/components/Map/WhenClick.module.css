@@ -40,6 +40,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
+  text-align: center;
 }
 .layer img {
   position: absolute;

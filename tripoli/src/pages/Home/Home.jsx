@@ -10,6 +10,7 @@ import HotelContainer from "../../components/HotelCard/HotelContainer";
 
 function Home({ api, tourApi, elementArray }) {
   let newApi = elementArray.slice(0, 3);
+  // let new2Api = elementArray.slice(0, 6);
   return (
     <>
       <HeroImage image={testImage} home={true} />

@@ -33,7 +33,7 @@ const Map = ({ api }) => {
   }, [setResponsiveStyle]);
 
   return (
-    <div className={styles.map}>
+    <div className={styles.map} id="map">
       {newApi.map((element) => {
         if (hideImages === "") {
           return (
