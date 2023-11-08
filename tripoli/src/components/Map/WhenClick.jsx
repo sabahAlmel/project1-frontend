@@ -6,6 +6,7 @@ const WhenClick = ({
   src,
   name,
   desc,
+  id,
   setDisplayImage,
   setHideImages,
   hideImages,
@@ -28,9 +29,7 @@ const WhenClick = ({
         <div className={styles.bubble}>
           <h3>{name}</h3>
           <p>{desc}</p>
-          <Link to={`/location/${name.split(" ")[0].toLowerCase()}`}>
-            See more
-          </Link>
+          <Link to={`/location/${id}`}>See more</Link>
         </div>
       </div>
     </div>

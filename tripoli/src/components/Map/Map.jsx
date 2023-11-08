@@ -10,6 +10,7 @@ const Map = ({ api }) => {
   let [name, setName] = useState("");
   let [source, setSource] = useState("");
   let [desc, setDesc] = useState("");
+  let [id, setId] = useState("");
 
   let [responsiveStyle, setResponsiveStyle] = useState("");
 
@@ -47,6 +48,7 @@ const Map = ({ api }) => {
                 setSource(element.heroImage);
                 setName(element.title);
                 setDesc(element.smallDescription);
+                setId(element._id);
                 hideImages === "" ? setHideImages("hide") : setHideImages("");
                 displayImage === ""
                   ? setDisplayImage("visible")
@@ -62,6 +64,7 @@ const Map = ({ api }) => {
           src={source}
           name={name}
           desc={desc}
+          id={id}
           setHideImages={setHideImages}
           setDisplayImage={setDisplayImage}
           hideImages={hideImages}
