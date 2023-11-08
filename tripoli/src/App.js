@@ -242,8 +242,6 @@ function App() {
     async function fetchData() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
-  console.log(response.data)
-
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -253,8 +251,8 @@ function App() {
       async function fetchHotels() {
         try {
           const response = await axios.get("http://localhost:4000/api/hotel");
-  console.log(response.data)
           setHotels(response.data);
+  console.log(response.data)
 
         } catch (error) {
           console.error(error);
@@ -263,7 +261,7 @@ function App() {
     fetchHotels();
   }, []);
   console.log("tours",tourApi);
-  console.log("hotels",hotels)
+  console.log("hotels",hotels);
   return (
     <>
       {/* <Header /> */}
