@@ -30,7 +30,7 @@ export default function ImageSlider(props) {
     }
 
     const imageStyle = {
-        backgroundImage: `url(${imagesArray[imageIndex]})`,
+        backgroundImage: `url(http://localhost:4000/${imagesArray[imageIndex]})`,
         width: '100%',
         height: '100%',
         backgroundPosition: 'center',

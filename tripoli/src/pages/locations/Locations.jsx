@@ -12,12 +12,24 @@ import Money from "../../components/SVGComponents/Money";
 import testImages from "../locations/testImages/testImages";
 // console.log(testImages)
 import ImageSlider from "../../components/slider/ImageSlider";
+import { useParams } from "react-router-dom";
 
 export default function Locations(props) {
   // let mywidth = 500;
   // let myheight = 300;
   const [myWidth, setMyWidth] = useState(500);
   const [myHeight, setMyHeight] = useState(300);
+  let {id} = useParams();
+  let thisLocation;
+
+  const allLocations = props.element;
+
+  allLocations.map((element)=>{
+    if(element._id == id ){
+      thisLocation = element;
+      return;
+    }
+  })
 
   useEffect(() => {
     function updateSize() {
@@ -35,20 +47,20 @@ export default function Locations(props) {
 
   let iconColor = props.iconColor || "#111";
 
-  let title = props.title;
-  const address = props.address;
-  const timeFromCityCenter = props.time;
-  const rating = props.rating;
-  const entranceFee = props.fee;
-
-  const geoLocation = [34.43336382815192, 35.844171745213394];
+  let title = thisLocation.title;
+  let address = thisLocation.address;
+  let timeFromCityCenter = thisLocation.timeFromCenter;
+  let rating = thisLocation.googleRating;
+  let entranceFee = thisLocation.entranceFee;
+  let geoLocation = thisLocation.geoLocation;
+  let thisImageArray = thisLocation.images;
 
   let testPath = "././tripoli.jpg";
 
   return (
     <>
       <Header></Header>
-      <HeroImage image={homePageImage} title="helloo" alt="tripoli"></HeroImage>
+      <HeroImage image={thisLocation.heroImage} title="helloo" alt="tripoli"></HeroImage>
       <div className={LocationCSS.locationContainer}>
         <h1>{title}</h1>
         <div className={LocationCSS.infoContainer}>
@@ -91,90 +103,11 @@ export default function Locations(props) {
         </div>
         <article className={LocationCSS.article}>
           <p>
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
-            dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            Lorem ipsum dolor sit amet
+            {thisLocation.description}
           </p>
         </article>
         <div className={LocationCSS.mainSlider}>
-          <ImageSlider images={testImages} />
+          <ImageSlider images={thisImageArray} />
         </div>
       </div>
     </>

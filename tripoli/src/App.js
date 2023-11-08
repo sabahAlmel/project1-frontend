@@ -36,6 +36,7 @@ import RecursiveTree from "./components/recursive/RecursiveTree";
 function App() {
   let [tourApi, setTourApi] = useState([]);
   let [locationApi, setLocationApi] = useState([]);
+  let [chosenLocation, setChosenLocation] = useState([]);
 
   // let locationApi = [
   //   {
@@ -51,194 +52,7 @@ function App() {
   //     images: ["aaa", "bbb"],
   //     heroImage: homePageImage,
   //   },
-  //   {
-  //     id: 1,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 1,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Test Api title",
-  //     address: "the test address",
-  //     timeFromCenter: "5min",
-  //     googleRating: 5,
-  //     entranceFee: "$5",
-  //     description: "This is my long description",
-  //     smallDescription: "this is my short description",
-  //     geoLocation: [1.5, 2.5],
-  //     images: ["aaa", "bbb"],
-  //     heroImage: homePageImage,
-  //   },
-  // ];
-
-  let api = [
-    {
-      id: 1,
-      title: "Tripoli citadel",
-      smallDescription: "tall building build in 2023",
-      heroImage: Citadel,
-    },
-    {
-      id: 2,
-      title: "Mansouri mosque",
-      smallDescription: "an old mosque",
-      heroImage: Mansouri,
-    },
-    {
-      id: 3,
-      title: "Taynal mosque",
-      smallDescription: "the bese mosque",
-      heroImage: Taynal,
-    },
-    {
-      id: 4,
-      title: "Mina port",
-      smallDescription: "big port",
-      heroImage: Mina,
-    },
-    {
-      id: 5,
-      title: "Maarad",
-      smallDescription: "huge building build in 2020",
-      heroImage: Maarad,
-    },
-    {
-      id: 6,
-      title: "Khan saboun",
-      smallDescription: "most big saboun factory",
-      heroImage: Khan,
-    },
-  ];
-
-  // let tourApi = [
-  //   {
-  //     id: 1,
-  //     image: Kazderni,
-  //     title: "kazderni",
-  //     description: "big big kazderni description",
-  //     link: "https://www.kazderni.com",
-  //   },
-  //   {
-  //     id: 2,
-  //     image: mira,
-  //     title: "mira",
-  //     description: "big big mira description",
-  //     link: "https://www.mira.com",
-  //   },
-  //   {
-  //     id: 3,
-  //     image: tour,
-  //     title: "Lebanon Tours and Travel",
-  //     description: "big big Tour description",
-  //     link: "https://www.hello.com",
-  //   },
-  //   {
-  //     id: 4,
-  //     image: trip,
-  //     title: "Tripadvisor",
-  //     description: "big big tripAdvisor description",
-  //     link: "https://www.tripadvisor.com",
-  //   },
-  // ];
+  //  
 
   useEffect(() => {
     async function fetchTours() {
@@ -289,19 +103,7 @@ function App() {
             path="locations"
             element={<AllLocations api={locationApi} />}
           />
-          <Route
-            path="/Location"
-            element={
-              <Locations
-                title="Baalback"
-                address="there on the fifth street"
-                time="60 minutes"
-                rating="5"
-                fee="$5"
-                iconColor="#123456"
-              ></Locations>
-            }
-          />
+          <Route path="/Location/:id" element={<Locations element = {locationApi} />}/>
         </Route>
         <Route path="/admin/tours" element={<Dashboard />} />
         <Route path="/admin/tours/update/:id" element={<Update />} />
