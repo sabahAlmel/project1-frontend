@@ -10,6 +10,7 @@ import HotelContainer from "../../components/HotelCard/HotelContainer";
 
 function Home({ api, tourApi, elementArray }) {
   let newApi = elementArray.slice(0, 3);
+  // let new2Api = elementArray.slice(0, 6);
   return (
     <>
       <HeroImage image={testImage} home={true} />
@@ -18,7 +19,7 @@ function Home({ api, tourApi, elementArray }) {
 
       <Map api={api} />
       <h3 className={styles.heading}>Hotel</h3>
-      <HotelContainer elementArray={newApi} />
+      <HotelContainer hotelapi={newApi} />
       <Link to="/hotels" className={styles.link}>
         View more &gt;&gt;
       </Link>
