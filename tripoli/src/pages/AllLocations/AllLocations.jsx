@@ -53,7 +53,7 @@ export default function AllLocations(props) {
 
   return (
     <>
-      <HeroImage image={heroTestImage}></HeroImage>
+      <HeroImage image={heroTestImage} locations={true}></HeroImage>
       <Button buttonPressed={setWhichButtonClicked} />
       {whichButtonClicked ? (
         whichButtonClicked == 1 ? (

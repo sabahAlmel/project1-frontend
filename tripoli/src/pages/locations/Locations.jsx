@@ -20,7 +20,19 @@ export default function Locations(props) {
   const [myWidth, setMyWidth] = useState(500);
   const [myHeight, setMyHeight] = useState(300);
   let {id} = useParams();
-  let thisLocation;
+  let thisLocation =  {
+        id: 1,
+        title: "Test Api title",
+        address: "the test address",
+        timeFromCenter: "5min",
+        googleRating: 5,
+        entranceFee: "$5",
+        description: "This is my long description",
+        smallDescription: "this is my short description",
+        geoLocation: [1.5, 2.5],
+        images: ["aaa", "bbb"],
+        heroImage: homePageImage,
+     };
 
   const allLocations = props.element;
 
@@ -55,12 +67,12 @@ export default function Locations(props) {
   let geoLocation = thisLocation.geoLocation;
   let thisImageArray = thisLocation.images;
 
-  let testPath = "././tripoli.jpg";
+  // let testPath = "././tripoli.jpg";
 
   return (
     <>
       <Header></Header>
-      <HeroImage image={thisLocation.heroImage} title="helloo" alt="tripoli"></HeroImage>
+      <HeroImage image={thisLocation.heroImage} whichLocation={thisLocation} alt="tripoli"></HeroImage>
       <div className={LocationCSS.locationContainer}>
         <h1>{title}</h1>
         <div className={LocationCSS.infoContainer}>

@@ -7,7 +7,7 @@ import HotelContainer from "../../components/HotelCard/HotelContainer";
 function Hotel({ api }) {
   return (
     <div>
-      <HeroImage image={hotel} />
+      <HeroImage image={hotel} hotels={true} />
       <HotelContainer elementArray={api} />
     </div>
   );

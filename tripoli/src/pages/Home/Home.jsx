@@ -12,7 +12,7 @@ function Home({ api, tourApi, elementArray }) {
   let newApi = elementArray.slice(0, 3);
   return (
     <>
-      <HeroImage image={testImage} />
+      <HeroImage image={testImage} home={true} />
       <About direction="top" />
       <About direction="bottom" />
 

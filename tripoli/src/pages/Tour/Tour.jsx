@@ -7,7 +7,7 @@ import tour from "../../images/tripoli.jpg";
 function Tour({ api }) {
   return (
     <>
-      <HeroImage image={tour} />
+      <HeroImage image={tour} tours={true}/>
       <TourCard api={api} home="false" />
     </>
   );
