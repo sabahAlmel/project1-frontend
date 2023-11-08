@@ -2,6 +2,10 @@ import style from "./Button.module.css";
 
 import Monuments from "../vector/Monuments";
 
+import Activitie from '../vector/Activities'
+
+import Worshop from '../vector/Worshop'
+
 import { useEffect, useState } from "react";
 
 // import ContainerLocation from '../containerLocation/ContainerLocation'
@@ -94,7 +98,7 @@ const Button = ({ buttonPressed }) => {
             buttonHandler(2);
           }}
         >
-          <Monuments />
+          <Activitie />
           <span>Activities</span>
         </div>
         <div
@@ -104,7 +108,7 @@ const Button = ({ buttonPressed }) => {
             buttonHandler(3);
           }}
         >
-          <Monuments />
+          <Worshop />
           <span>Places of Worship</span>
         </div>
       </div>

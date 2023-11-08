@@ -34,6 +34,7 @@ import ContainerOfThePage from "./components/ContainerOfThePage/ContainerOfThePa
 
 function App() {
   let [tourApi, setTourApi] = useState([]);
+  let [hotels, setHotels] = useState([])
 
   let locationApi = [
     {
@@ -241,14 +242,28 @@ function App() {
     async function fetchData() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
+  console.log(response.data)
+
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
       }
     }
     fetchData();
+      async function fetchHotels() {
+        try {
+          const response = await axios.get("http://localhost:4000/api/hotel");
+  console.log(response.data)
+          setHotels(response.data);
+
+        } catch (error) {
+          console.error(error);
+        }
+    }
+    fetchHotels();
   }, []);
-  console.log(tourApi);
+  console.log("tours",tourApi);
+  console.log("hotels",hotels)
   return (
     <>
       {/* <Header /> */}
@@ -264,7 +279,7 @@ function App() {
           <Route path="tour" element={<Tour api={tourApi} />} />
           <Route
             path="hotels"
-            element={<Hotel api={locationApi} home="false" />}
+            element={<Hotel hotelapi={hotels} home="false" />}
           />
           <Route
             path="locations"

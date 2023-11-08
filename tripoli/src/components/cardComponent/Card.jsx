@@ -7,7 +7,7 @@ import style from "./card.module.css";
 import CarIcon from "../vector/CarIcon";
 
 const Card = ({ data }) => {
-  console.log("data to card");
+  console.log("data to card",data);
   // const data = props.data;
 
   return (
@@ -15,12 +15,12 @@ const Card = ({ data }) => {
       <div className={style.card}>
         <div className={style.overflow}>
           <a
-            href="https://www.google.com"
+            href={data.link}
             target="_blank"
-            className={style.goToHotel}
+            className={style.goToHotel} rel="noreferrer"
           >
             <img
-              src={data.heroImage}
+              src={data.image}
               alt="hotel_image"
               className={style.hotelImg}
             />
@@ -34,14 +34,14 @@ const Card = ({ data }) => {
           </div>
           <div className={style.CarIconStayle}>
             <CarIcon />
-            <p className={style.time}>{data.timeFromCenter}</p>
+            <p className={style.time}>{data.time} min</p>
           </div>
           <div className={style.priceButtun}>
-            <p className={style.price}>{data.entranceFee}</p>
+            <p className={style.price}>{data.rating}</p>
             <a
-              href="https://www.google.com"
+              href={data.link}
               target="_blank"
-              className={style.goToHotel}
+              className={style.goToHotel} rel="noreferrer"
             >
               <button className={style.buttonView}>View</button>
             </a>

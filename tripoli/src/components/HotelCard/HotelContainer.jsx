@@ -1,11 +1,12 @@
 import Card from "../cardComponent/Card";
 import styles from "./HotelContainer.module.css";
 
-export default function HotelContainer(props) {
-  const elementArray = props.elementArray;
+export default function HotelContainer({hotelapi}) {
+  console.log("container",hotelapi)
+  // const elementArray = props.elementArray;
   return (
     <div className={styles.card}>
-      {elementArray.map((ele) => {
+      {hotelapi.map((ele) => {
         return <Card data={ele} />;
       })}
     </div>

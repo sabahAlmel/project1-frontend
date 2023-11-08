@@ -10,7 +10,7 @@ const About = (props) => {
         className={`${
           direction === "top" ? style.RowDisplay : style.RowReverseDispllay
         }`}
-      >
+        >
         <img src={aboutImg} className={style.aboutImage} alt="about" />
         <div>
           <h1 className={style.title}>ABOUT VISIT TRIPOLI</h1>
