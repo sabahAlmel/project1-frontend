@@ -2,6 +2,7 @@ import LocationIcon from "../vector/LocationIcon";
 import style from "./card.module.css";
 import CarIcon from "../vector/CarIcon";
 import Star from "..//SVGComponents/Star";
+import { Link } from "react-router-dom";
 
 const Card = ({ data, type }) => {
   // console.log("data to card",data);
@@ -38,9 +39,8 @@ const Card = ({ data, type }) => {
               />
             </a>
           ) : (
-            <a
-              href={`/location/${locationId}`}
-              target="_blank"
+            <Link
+              to={`/location/${locationId}`}
               className={style.goToHotel}
               rel="noreferrer"
             >
@@ -49,7 +49,7 @@ const Card = ({ data, type }) => {
                 alt="hotel_image"
                 className={style.hotelImg}
               />
-            </a>
+            </Link>
           )}
         </div>
         <div className={style.information}>
@@ -79,13 +79,13 @@ const Card = ({ data, type }) => {
                 <button className={style.buttonView}>View</button>
               </a>
             ) : (
-              <a
-                href={`/location/${locationId}`}
+              <Link
+                to={`/location/${locationId}`}
                 className={style.goToHotel}
                 rel="noreferrer"
               >
                 <button className={style.buttonView}>View</button>
-              </a>
+              </Link>
             )}
           </div>
         </div>
