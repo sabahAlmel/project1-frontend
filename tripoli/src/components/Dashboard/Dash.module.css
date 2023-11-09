@@ -10,7 +10,7 @@ a {
 }
 
 .containerDash {
-  max-width: 1024px;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -97,7 +97,7 @@ table {
   border-color: #32383e;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   table,
   thead,
   tbody,
