@@ -25,6 +25,7 @@
 
 .price{
     font-size: 20px;
+    margin-left: 4px;
 }
 
 .information{
@@ -95,6 +96,7 @@
 .starRatiang{
     display: flex;
     align-items: center;
+    margin-left: -6px;
 }
 @media(max-width: 1500px){
     .card{
