@@ -64,8 +64,8 @@ export default function HeroImage(props) {
     const typed = new Typed(el.current, {
       // strings: ['<i>First</i> sentence.', ' a second sentence.', `${title}`],
       strings: mystrings,
-      typeSpeed: 60,
-      backSpeed: 30,
+      typeSpeed: 80,
+      backSpeed: 50,
       loop: false,
     });
 
