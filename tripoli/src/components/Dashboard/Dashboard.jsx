@@ -18,7 +18,7 @@ function Dashboard() {
     fetchData();
   }, [tourApi]);
   if (!tourApi || tourApi.length === 0) {
-    return <div>No data available.</div>;
+    return <div className={styles.loading}>loading...</div>;
   }
   const keys = Object.keys(tourApi[0]);
   return (

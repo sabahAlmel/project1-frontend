@@ -19,7 +19,7 @@ function Update() {
     async function fetchData() {
       try {
         const response = await axios.get("http://localhost:4000/tours");
-        setTourApi(response.data);
+        return setTourApi(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -76,7 +76,9 @@ function Update() {
       alert("Item not Updated");
     }
   };
-
+  if (!tourApi || tourApi.length === 0) {
+    return <div className={styles.loading}>loading...</div>;
+  }
   return (
     <main id={styles["siteMain"]}>
       <div className={styles.containerDash}>
