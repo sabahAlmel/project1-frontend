@@ -18,33 +18,33 @@ export default function HeroImage(props) {
 
   if(ishome){
     myurl = homeImage;
-    mystrings.push("VISITRIPOLI: Welcome to Tripoli!")
-    mystrings.push("VISITRIPOLI: Discover the hidden gem of Lebanon...")
-    mystrings.push("VISITRIPOLI: Home Page..|")
+    mystrings.push("| Welcome to Tripoli!")
+    mystrings.push("| Discover the hidden gem of Lebanon...")
+    mystrings.push("| Home Page...")
   }
   if(islocations){
     myurl = locationsImage;
-    mystrings.push("VISITRIPOLI: Discover Tripoli's sites...")
-    mystrings.push("VISITRIPOLI: Discover the hidden gem of Lebanon...")
-    mystrings.push("VISITRIPOLI: Locations Page ..|")
+    mystrings.push("| Discover Tripoli's sites...")
+    mystrings.push("| Discover the hidden gem of Lebanon...")
+    mystrings.push("| Locations Page ..|")
   }
   if(ishotels){
     myurl = hotelsImage;
-    mystrings.push("VISITRIPOLI: Choose where you want to stay!")
-    mystrings.push("VISITRIPOLI: Best Hotels in Tripoli");
-    mystrings.push("VISITRIPOLI: Hotels Page ..|")
+    mystrings.push("| Choose where you want to stay!")
+    mystrings.push("| Best Hotels in Tripoli");
+    mystrings.push("| Hotels Page ...")
   }
   if(istours){
     myurl = toursImage;
-    mystrings.push("VISITRIPOLI: Plan your local tour!")
-    mystrings.push("VISITRIPOLI: Checkout the tours in Tripoli...");
-    mystrings.push("VISITRIPOLI: Tours Page ..|")
+    mystrings.push("| Plan your local tour!")
+    mystrings.push("| Checkout the tours in Tripoli...");
+    mystrings.push("| Tours Page ...")
   }
   if(props.whichLocation){
     // myurl = toursImage;
-    mystrings.push(`VISITRIPOLI: ${props.whichLocation.title}`);
-    mystrings.push(`VISITRIPOLI: ${props.whichLocation.smallDescription}`);
-    mystrings.push(`VISITRIPOLI: ${props.whichLocation.title}`);
+    mystrings.push(`| ${props.whichLocation.title}`);
+    mystrings.push(`| ${props.whichLocation.smallDescription}`);
+    mystrings.push(`| ${props.whichLocation.title}`);
   }
   const imageCSS = {
     background: `url(${myurl}) no-repeat`,
@@ -64,8 +64,8 @@ export default function HeroImage(props) {
     const typed = new Typed(el.current, {
       // strings: ['<i>First</i> sentence.', ' a second sentence.', `${title}`],
       strings: mystrings,
-      typeSpeed: 100,
-      backSpeed: 100,
+      typeSpeed: 80,
+      backSpeed: 50,
       loop: false,
     });
 

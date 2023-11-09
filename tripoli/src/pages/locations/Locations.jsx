@@ -74,7 +74,7 @@ export default function Locations(props) {
       <Header></Header>
       <HeroImage image={thisLocation.heroImage} whichLocation={thisLocation} alt="tripoli"></HeroImage>
       <div className={LocationCSS.locationContainer}>
-        <h1>{title}</h1>
+       
         <div className={LocationCSS.infoContainer}>
           <ul className={LocationCSS.infoList}>
             <li>
@@ -113,6 +113,7 @@ export default function Locations(props) {
             ></iframe>
           </div>
         </div>
+        <h1>{title}</h1>
         <article className={LocationCSS.article}>
           <p>
             {thisLocation.description}
