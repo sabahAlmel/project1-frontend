@@ -33,7 +33,7 @@ function Add() {
       formDataToSend.append("image", formData.image);
 
       const response = await axios.post(
-        "http://localhost:4000/tours/add",
+        `${process.env.REACT_APP_BACKEND}/tours/add`,
         formDataToSend,
         {
           headers: {
@@ -41,7 +41,6 @@ function Add() {
           },
         }
       );
-      // console.log("Item added:", response.data);
       alert("Item added");
     } catch (error) {
       console.error("Error adding item:", error);

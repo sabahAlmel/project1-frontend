@@ -33,7 +33,7 @@ const Card = ({ data, type }) => {
               rel="noreferrer"
             >
               <img
-                src={`http://localhost:4000/${cardImage}`}
+                src={`${process.env.REACT_APP_BACKEND}/${cardImage}`}
                 alt="hotel_image"
                 className={style.hotelImg}
               />
@@ -45,7 +45,7 @@ const Card = ({ data, type }) => {
               rel="noreferrer"
             >
               <img
-                src={`http://localhost:4000/${cardImage}`}
+                src={`${process.env.REACT_APP_BACKEND}/${cardImage}`}
                 alt="hotel_image"
                 className={style.hotelImg}
               />

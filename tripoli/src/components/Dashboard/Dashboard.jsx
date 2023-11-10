@@ -9,7 +9,9 @@ function Dashboard() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:4000/tours");
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND}/tours`
+        );
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -63,7 +65,7 @@ function Dashboard() {
                       <a
                         onClick={async () => {
                           let response = await axios.delete(
-                            `http://localhost:4000/tours/delete/${element.id}`
+                            `${process.env.REACT_APP_BACKEND}/tours/delete/${element.id}`
                           );
                           console.log("deleted " + response.data);
                           alert("Data is deleted");

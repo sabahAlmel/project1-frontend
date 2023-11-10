@@ -18,7 +18,9 @@ function Update() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:4000/tours");
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND}/tours`
+        );
         return setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -61,7 +63,7 @@ function Update() {
       formDataToSend.append("image", formData.image);
       console.log(formDataToSend);
       const response = await axios.put(
-        `http://localhost:4000/tours/update/${id}`,
+        `${process.env.REACT_APP_BACKEND}/tours/update/${id}`,
         formDataToSend,
         {
           headers: {

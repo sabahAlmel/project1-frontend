@@ -25,7 +25,10 @@ const WhenClick = ({
       }}
     >
       <div className={styles.layer}>
-        <img src={`http://localhost:4000/${src}`} alt="this is image" />
+        <img
+          src={`${process.env.REACT_APP_BACKEND}/${src}`}
+          alt="this is image"
+        />
         <div className={styles.bubble}>
           <h3>{name}</h3>
           <p>{desc}</p>

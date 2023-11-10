@@ -6,7 +6,7 @@ function Card({ element }) {
     <div className={styles.container}>
       <a href={element.link} target="_blank" className={styles.image}>
         <img
-          src={`http://localhost:4000/${element.image}`}
+          src={`${process.env.REACT_APP_BACKEND}/${element.image}`}
           alt="this is image"
         />
       </a>
