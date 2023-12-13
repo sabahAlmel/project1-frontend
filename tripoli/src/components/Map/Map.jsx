@@ -18,19 +18,23 @@ const Map = ({ api }) => {
     const handleResize = () => {
       if (window.innerWidth <= 992) {
         setResponsiveStyle("visible");
-        setSource(newApi[0].heroImage);
-        setName(newApi[0].title);
-        setDesc(newApi[0].smallDescription);
+        if (newApi.length > 0) {
+          setSource(newApi[0].heroImage);
+          setName(newApi[0].title);
+          setDesc(newApi[0].smallDescription);
+        }
       } else {
         setResponsiveStyle("");
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [setResponsiveStyle]);
+  }, [newApi, setResponsiveStyle]);
 
   return (
     <div className={styles.map} id="map">
