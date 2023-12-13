@@ -3,9 +3,6 @@ import Button from "../../components/buttonLocation/Button";
 import HeroImage from "../../components/heroImage/HeroImage";
 import heroTestImage from "../../components/heroImage/tripoli.jpg";
 import ContainerLocation from "../../components/containerLocation/ContainerLocation";
-import Activities from "../../components/vector/Activities";
-import Monuments from "../../components/vector/Monuments";
-import Worshop from "../../components/vector/Worshop";
 
 export default function AllLocations(props) {
   const [whichButtonClicked, setWhichButtonClicked] = useState("");
@@ -41,18 +38,6 @@ export default function AllLocations(props) {
   if (idThree.length > 3) {
     idThree = idThree.slice(0, 3);
   }
-
-  // console.log(idOne,idThree,idTwo)
-
-  // const map2 = idOne.map((element)=>{
-  //    return <ContainerLocation element = {element}></ContainerLocation>
-  // })
-  // const map3 = idTwo.map((element)=>{
-  //     return <ContainerLocation element = {element}></ContainerLocation>
-  //  })
-  //  const map4 = idThree.map((element)=>{
-  //     return <ContainerLocation element = {element}></ContainerLocation>
-  //  })
 
   return (
     <>

@@ -4,11 +4,6 @@ import axios from "axios";
 import styles from "./Dash.module.css";
 
 function Add() {
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [link, setLink] = useState("");
-  // const [image, setImage] = useState(null);
-
   const [formData, setFormData] = useState({
     title: "",
     description: "",

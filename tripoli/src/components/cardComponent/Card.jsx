@@ -5,8 +5,6 @@ import Star from "..//SVGComponents/Star";
 import { Link } from "react-router-dom";
 
 const Card = ({ data, type }) => {
-  // console.log("data to card",data);
-  // const data = props.data;
   let cardImage = "";
   let cardTime = "";
   let cardRating = "";

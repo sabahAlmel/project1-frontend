@@ -32,7 +32,6 @@ function Update() {
   useEffect(() => {
     tourApi.map((element) => {
       if (element.id == id) {
-        console.log(element);
         setFormData({
           ...formData,
           title: element.title,
@@ -61,7 +60,6 @@ function Update() {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("link", formData.link);
       formDataToSend.append("image", formData.image);
-      console.log(formDataToSend);
       const response = await axios.put(
         `${process.env.REACT_APP_BACKEND}/tours/update/${id}`,
         formDataToSend,
@@ -71,7 +69,6 @@ function Update() {
           },
         }
       );
-      console.log("Item updated:", response.data);
       alert("Item Updated");
     } catch (error) {
       console.error("Error adding item:", error);

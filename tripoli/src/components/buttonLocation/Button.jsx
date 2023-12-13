@@ -2,22 +2,17 @@ import style from "./Button.module.css";
 
 import Monuments from "../vector/Monuments";
 
-import Activitie from '../vector/Activities'
+import Activitie from "../vector/Activities";
 
-import Worshop from '../vector/Worshop'
+import Worshop from "../vector/Worshop";
 
-import { useEffect, useState } from "react";
-
-// import ContainerLocation from '../containerLocation/ContainerLocation'
+import { useState } from "react";
 
 const Button = ({ buttonPressed }) => {
   const [button1Active, setButton1Active] = useState("");
   const [button2Active, setButton2Active] = useState("");
   const [button3Active, setButton3Active] = useState("");
 
-  const setPressed = buttonPressed;
-
-  console.log("button", button1Active);
   const buttonHandler = (id) => {
     if (id == 1) {
       if (button1Active == "active1") {

@@ -8,40 +8,35 @@ import MapIcon from "../../components/SVGComponents/MapIcon";
 import Star from "../../components/SVGComponents/Star";
 import Money from "../../components/SVGComponents/Money";
 
-// import test from '../../components/heroImage/tripoli.png'
-import testImages from "../locations/testImages/testImages";
-// console.log(testImages)
 import ImageSlider from "../../components/slider/ImageSlider";
 import { useParams } from "react-router-dom";
 
 export default function Locations(props) {
-  // let mywidth = 500;
-  // let myheight = 300;
   const [myWidth, setMyWidth] = useState(500);
   const [myHeight, setMyHeight] = useState(300);
-  let {id} = useParams();
-  let thisLocation =  {
-        id: 1,
-        title: "Test Api title",
-        address: "the test address",
-        timeFromCenter: "5min",
-        googleRating: 5,
-        entranceFee: "$5",
-        description: "This is my long description",
-        smallDescription: "this is my short description",
-        geoLocation: [1.5, 2.5],
-        images: ["aaa", "bbb"],
-        heroImage: homePageImage,
-     };
+  let { id } = useParams();
+  let thisLocation = {
+    id: 1,
+    title: "Test Api title",
+    address: "the test address",
+    timeFromCenter: "5min",
+    googleRating: 5,
+    entranceFee: "$5",
+    description: "This is my long description",
+    smallDescription: "this is my short description",
+    geoLocation: [1.5, 2.5],
+    images: ["aaa", "bbb"],
+    heroImage: homePageImage,
+  };
 
   const allLocations = props.element;
 
-  allLocations.map((element)=>{
-    if(element._id == id ){
+  allLocations.map((element) => {
+    if (element._id == id) {
       thisLocation = element;
       return;
     }
-  })
+  });
 
   useEffect(() => {
     function updateSize() {
@@ -67,14 +62,15 @@ export default function Locations(props) {
   let geoLocation = thisLocation.geoLocation;
   let thisImageArray = thisLocation.images;
 
-  // let testPath = "././tripoli.jpg";
-
   return (
     <>
       <Header></Header>
-      <HeroImage image={thisLocation.heroImage} whichLocation={thisLocation} alt="tripoli"></HeroImage>
+      <HeroImage
+        image={thisLocation.heroImage}
+        whichLocation={thisLocation}
+        alt="tripoli"
+      ></HeroImage>
       <div className={LocationCSS.locationContainer}>
-       
         <div className={LocationCSS.infoContainer}>
           <ul className={LocationCSS.infoList}>
             <li>
@@ -115,9 +111,7 @@ export default function Locations(props) {
         </div>
         <h1>{title}</h1>
         <article className={LocationCSS.article}>
-          <p>
-            {thisLocation.description}
-          </p>
+          <p>{thisLocation.description}</p>
         </article>
         <div className={LocationCSS.mainSlider}>
           <ImageSlider images={thisImageArray} />

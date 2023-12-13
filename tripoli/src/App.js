@@ -28,8 +28,6 @@ function App() {
         const response = await axios.get(
           `${process.env.REACT_APP_BACKEND}/tours`
         );
-        console.log(response.data);
-
         setTourApi(response.data);
       } catch (error) {
         console.error(error);
@@ -52,7 +50,6 @@ function App() {
         const response = await axios.get(
           `${process.env.REACT_APP_BACKEND}/api/hotel`
         );
-        console.log(response.data);
         setHotels(response.data);
       } catch (error) {
         console.error(error);
@@ -60,40 +57,32 @@ function App() {
     }
     fetchHotels();
   }, []);
-  console.log("tours", tourApi);
-  console.log("hotels", hotels);
   return (
-    <>
-      {/* <Header /> */}
-      <Routes>
-        <Route path="/" element={<ContainerOfThePage />}>
-          <Route
-            index
-            path="/"
-            element={
-              <Home api={locationApi} tourApi={tourApi} hotelapi={hotels} />
-            }
-          />
-          <Route path="tours" element={<Tour api={tourApi} />} />
-          <Route
-            path="hotels"
-            element={<Hotel hotelapi={hotels} home="false" />}
-          />
-          <Route
-            path="locations"
-            element={<AllLocations api={locationApi} />}
-          />
-          <Route
-            path="/Location/:id"
-            element={<Locations element={locationApi} />}
-          />
-        </Route>
-        <Route path="/admin/tours" element={<Dashboard />} />
-        <Route path="/admin/tours/update/:id" element={<Update />} />
-        <Route path="/admin/tours/add" element={<Add />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<ContainerOfThePage />}>
+        <Route
+          index
+          path="/"
+          element={
+            <Home api={locationApi} tourApi={tourApi} hotelapi={hotels} />
+          }
+        />
+        <Route path="tours" element={<Tour api={tourApi} />} />
+        <Route
+          path="hotels"
+          element={<Hotel hotelapi={hotels} home="false" />}
+        />
+        <Route path="locations" element={<AllLocations api={locationApi} />} />
+        <Route
+          path="/Location/:id"
+          element={<Locations element={locationApi} />}
+        />
+      </Route>
+      <Route path="/admin/tours" element={<Dashboard />} />
+      <Route path="/admin/tours/update/:id" element={<Update />} />
+      <Route path="/admin/tours/add" element={<Add />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
   );
 }
 

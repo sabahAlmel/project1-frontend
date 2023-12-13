@@ -4,8 +4,6 @@ import HeroImage from "../../components/heroImage/HeroImage";
 import HotelContainer from "../../components/HotelCard/HotelContainer";
 
 function Hotel({ hotelapi }) {
-  console.log("HOTLES:", hotelapi);
-
   return (
     <div>
       <HeroImage image={hotel} hotels={true} />

@@ -67,7 +67,6 @@ function Dashboard() {
                           let response = await axios.delete(
                             `${process.env.REACT_APP_BACKEND}/tours/delete/${element.id}`
                           );
-                          console.log("deleted " + response.data);
                           alert("Data is deleted");
                         }}
                         className={`${styles.btn} ${styles.borderShadow} ${styles.delete}`}
